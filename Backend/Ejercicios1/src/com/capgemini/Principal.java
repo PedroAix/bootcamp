@@ -4,6 +4,12 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Principal {
+	
+	public static void MostrarIntentos(int a) {//MUESTRA LOS INTENTOS
+		System.out.println("INTENTO Nº" + a);
+	}
+	
+	
 	public static void main(String[] args) {
 		
 		Scanner teclado = new Scanner(System.in);
@@ -15,7 +21,7 @@ public class Principal {
 		
 		
 		do {
-			System.out.println("INTENTO Nº" + intento);
+			MostrarIntentos(intento);
 			System.out.print("Introduce un número del 1 al 100: ");
 			int num = teclado.nextInt();
 			if (num_aleatorio == num) {
@@ -30,4 +36,6 @@ public class Principal {
 			}
 		} while (intento <= 10); //CONDICION DE PERMANENCIA
 	}
+
+
 }
