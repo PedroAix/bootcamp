@@ -32,7 +32,6 @@ public class Principal {
 			if (num_aleatorio == num) {
 				System.out.println("CORRECTO!");
 				break;
-				
 			}
 			else {
 				System.out.println("**INCORRECTO**");
