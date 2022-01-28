@@ -9,6 +9,11 @@ public class Principal {
 		System.out.println("INTENTO Nº" + a);
 	}
 	
+	public static void TamañoNumero(int num_aleatorio, int num) {//MUESTRA SI EL NÚMERO ES MÁS GRANDE O PEQUEÑO
+		if (num > num_aleatorio) System.out.println("El número es más pequeño\n");
+		else System.out.println("El número es más grande\n");
+	}
+	
 	
 	public static void main(String[] args) {
 		
@@ -31,11 +36,9 @@ public class Principal {
 			else {
 				System.out.println("**INCORRECTO**");
 				intento++;
-				if (num > num_aleatorio) System.out.println("El número es más pequeño\n");
-				if (num < num_aleatorio) System.out.println("El número es más grande\n");
+				TamañoNumero(num_aleatorio,num);
 			}
 		} while (intento <= 10); //CONDICION DE PERMANENCIA
 	}
-
 
 }
