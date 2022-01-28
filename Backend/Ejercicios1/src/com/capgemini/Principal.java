@@ -7,6 +7,7 @@ public class Principal {
 	
 	public static void MostrarIntentos(int a) {//MUESTRA LOS INTENTOS
 		System.out.println("INTENTO Nº" + a);
+		
 	}
 	
 	
