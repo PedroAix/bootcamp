@@ -1,43 +1,53 @@
 package com.capgemini;
 
 import java.util.Random;
-import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 public class Principal {
 
-	public static void MostrarIntentos(int a) {// MUESTRA LOS INTENTOS
-		System.out.println("INTENTO Nº" + a);
+	public void inicializar() {//MENSAJE DE INICIO
+		JOptionPane.showMessageDialog(null, "Adivina el número!\nTienes 10 intentos\n\n");
 	}
-
-	public static void AproximacionNumero(int num_aleatorio, int num) {// MUESTRA SI EL NÚMERO ES MÁS GRANDE O PEQUEÑO
+	
+	public static int recogerNumero(int a) {// MUESTRA LOS INTENTOS Y RECOGE EL NUMERO INTRODUCIDO
+		try {
+			int b = Integer.parseInt(JOptionPane.showInputDialog(null, "INTENTO Nº" + a +"\nIntroduce un número del 1 al 100"));
+			return b;
+		}
+		catch (NumberFormatException ex0b) {
+			int b = recogerNumero(a);
+			return b;
+		}
+	}
+	
+	public static void aproximacionNumero(int num_aleatorio, int num) {// MUESTRA SI EL NÚMERO ES MÁS GRANDE O PEQUEÑO
 		if (num > num_aleatorio)
-			System.out.println("El número es más pequeño\n");
+			JOptionPane.showMessageDialog(null, "**INCORRECTO**\nEl número es más pequeño");
 		else
-			System.out.println("El número es más grande\n");
+			JOptionPane.showMessageDialog(null, "**INCORRECTO**\nEl número es más grande");
 	}
 
-	public static void main(String[] args) {
+	public void jugada() {//PROGRAMA PRINCIPAL
 
-		Scanner teclado = new Scanner(System.in);
 		var rnd = new Random();
-
-		System.out.println("Adivina el número!\nTienes 10 intentos\n\n");
+		
 		int num_aleatorio = rnd.nextInt(100);
 		int intento = 1;
+		int num = 0;
 
 		do {
-			MostrarIntentos(intento);
-			System.out.print("Introduce un número del 1 al 100: ");
-			int num = teclado.nextInt();
+			num = recogerNumero(intento);
 			if (num_aleatorio == num) {
-				System.out.println("CORRECTO!");
+				JOptionPane.showMessageDialog(null, "CORRECTO!");
 				break;
-			} else {
-				System.out.println("**INCORRECTO**");
+			} 
+			else {	
 				intento++;
-				AproximacionNumero(num_aleatorio, num);
+				aproximacionNumero(num_aleatorio, num);
 			}
 		} while (intento <= 10); // CONDICION DE PERMANENCIA
+		
+		if (intento > 10) JOptionPane.showMessageDialog(null, "Te has quedado sin intentos!\nEl número secreto era: " + num_aleatorio);
 	}
 
 }
