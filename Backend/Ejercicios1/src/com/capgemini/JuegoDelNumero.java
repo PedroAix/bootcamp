@@ -18,6 +18,6 @@ public class JuegoDelNumero {
 			juego.jugada(num);
 			JOptionPane.showMessageDialog(null, juego.getMessage());
 			
-		} while (!juego.getTerminado());
+		} while (!juego.getTerminado() && juego.getIntento() <= 10);
 	}
 }
