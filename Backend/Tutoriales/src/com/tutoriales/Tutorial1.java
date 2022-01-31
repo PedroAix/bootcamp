@@ -5,7 +5,32 @@ import javax.swing.JOptionPane;//Para GUI
 
 public class Tutorial1 {
 	
-	public static void main(String[] args) {
+	public static void Strings (String[] args) {
+		
+//		substring devuelve una subcadena desde la posicion inicial hasta la final -1
+//		charAt devuelve el carácter en la posición indicada
+//		equals compara si dos String son iguales (devuelve booleano)
+//		equalsIgnoreCase es igual que equals pero sin distinguir en mayusculas o minusculas
+		
+		String nombre = "Pedro Aix Vinaroz";
+		
+		System.out.println("Hola, mi nombre es " + nombre);
+		
+		System.out.println("Tiene " + nombre.length() + " letras");
+		
+		System.out.println("La primera letra de mi nombre es " + nombre.charAt(0));//o nombre.substring(0,1)
+		
+		int ultimaletra = nombre.length();
+		System.out.println("La última letra es " + nombre.charAt(ultimaletra - 1));// o nombre.substring(ultimaletra) - 1)
+		
+		String alumno1, alumno2;
+		alumno1 = "PEDRo";
+		alumno2 = "Pedro";
+		System.out.println(alumno1.equals(alumno2));
+		System.out.println(alumno1.equalsIgnoreCase(alumno2));
+	}
+	
+	public static void Math(String[] args) {
 		
 		
 //		double x = 3.54;
@@ -17,6 +42,7 @@ public class Tutorial1 {
 //		double z = Math.round(x); Redondeo normal
 //		double z = Math.ceil(x); Redondeo siempre hacia arriba
 //		double z = Math.floor(x); Redondeo siempre hacia abajo
+//		double z = Math.pow(3, 5); Potencia (base, exponente)
 //		System.out.println(z);
 		
 		
@@ -108,9 +134,13 @@ public class Tutorial1 {
 //		System.out.println("\tpizza");
 //		System.out.println();
 
+//		final int edad = 21; DECLARACION DE CONSTANTE
+
 		int x;// Declaración
 		x = 123;// Asignación
 		int y = 123;// Inicialización
+		byte d = 32;
+		short e = 900;
 		long z = 12334558447384732L;// Para los long hay que poner la L siempre
 		float a = 3.14f;// Para los float poner siempre f
 		double b = 3.14;
