@@ -6,14 +6,16 @@ public class Calculadora {
 	public double calculo(double operando, char operador) {
 		switch (operador) {
 		case '+':
-			total = total + operando;
+			total += operando;
 			break;
 		case '-':
-			total = total - operando;
+			total -= operando;
 			break;
 		case '*':
-			total = total * operando;
+			total *= operando;
 			break;
+		case '=':
+			total += operando;
 		}
 		
 		return total;

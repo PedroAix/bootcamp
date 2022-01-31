@@ -6,7 +6,7 @@ public class Decodificar {
 		
 		String cadena = "3+4+3,4-7*1=";
 		cadena = cadena.replace(",", ".");
-		String[] cadena_separada = cadena.split("(?<=[-+*/()])");
+		String[] cadena_separada = cadena.split("(?<=[-+*/])");
 		double total = 0.0;
 		
 		Calculadora calcular = new Calculadora();
