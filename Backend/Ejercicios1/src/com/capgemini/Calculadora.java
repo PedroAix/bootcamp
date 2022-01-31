@@ -2,9 +2,9 @@ package com.capgemini;
 
 public class Calculadora {
 	private double total = 0.0;
-
+	private char pendiente = '+';
 	public double calculo(double operando, char operador) {
-		switch (operador) {
+		switch (pendiente) {
 		case '+':
 			total += operando;
 			break;
@@ -17,7 +17,7 @@ public class Calculadora {
 		case '=':
 			total += operando;
 		}
-		
+		pendiente = operador;
 		return total;
 
 	}

@@ -17,7 +17,7 @@ public class Decodificar {
 			char operador = cadena_separada[i].charAt(cadena_separada[i].length() - 1);
 
 			System.out.println(operando + " " + operador);
-			total = total + calcular.calculo(operando, operador);
+			total = calcular.calculo(operando, operador);
 		}
 		System.out.println("\n\nEl total es: " + total);
 	}
