@@ -4,15 +4,14 @@ import java.util.Random;
 
 
 public class Juego {
-//	private int intento;
-//	private Random rnd = new Random();
-//	private int num_aleatorio;
-//	private String mensaje;
-//	private boolean terminado;
+	private int intento;
+	private Random rnd = new Random();
+	private int num_aleatorio;
+	private String mensaje;
+	private boolean terminado;
 	
 	/**
-	 * En vez de inicializar los atributos como aparece arriba
-	 * y declarar el método  public void inicializar(), el cual
+	 * En vez de declarar el método public void inicializar(), el cual
 	 * llamamos en la clase JuegoDelNumero.java, podemos
 	 * crear un método del mismo nombre que la clase (constructor) y
 	 * llamar dentro al método inicializar. De esta forma,
@@ -21,11 +20,6 @@ public class Juego {
 	 * cuelgue de él
 	 * 
 	 */
-	
-	private int intento, num_aleatorio;
-	Random rnd = new Random();
-	private String mensaje;
-	private boolean terminado;
 
 	public Juego() { //CONSTRUCTOR
 	inicializar();
