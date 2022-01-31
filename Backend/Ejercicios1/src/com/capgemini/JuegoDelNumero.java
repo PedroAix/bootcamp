@@ -14,9 +14,14 @@ public class JuegoDelNumero {
 		//Ahora es el propio constructor el que se encarga de hacer la llamada.
 		
 		do {
-			num = Integer.parseInt(JOptionPane.showInputDialog(null, "INTENTO Nº" + juego.getIntento() +"\nIntroduce un número del 1 al 100"));			
-			juego.jugada(num);
-			JOptionPane.showMessageDialog(null, juego.getMessage());
+			try {
+				num = Integer.parseInt(JOptionPane.showInputDialog(null, "INTENTO Nº" + juego.getIntento() +"\nIntroduce un número del 1 al 100"));			
+				juego.jugada(num);
+				JOptionPane.showMessageDialog(null, juego.getMessage());
+				
+			} catch (NumberFormatException error) {
+				JOptionPane.showMessageDialog(null, "Introduce un tipo de dato válido");
+			}
 			
 		} while (!juego.getTerminado() && juego.getIntento() <= 10);
 	}
