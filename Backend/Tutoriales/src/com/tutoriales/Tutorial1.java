@@ -5,8 +5,49 @@ import javax.swing.JOptionPane;//Para GUI
 
 public class Tutorial1 {
 	
-	public static void main(String[] args) {
-
+	public static void Figuras(String[] args) {
+		
+		/**
+		 * PROGRAMA QUE CALCULA EL AREA DE
+		 * LA FIGURA INDICADA
+		 * 
+		 *  Utilizamos Scanner para introducir la figura
+		 *  y JOptionPane para introducir las medidas
+		 */
+	
+		Scanner teclado = new Scanner(System.in);
+		
+		System.out.println("Introduce el número en función de la figura deseada:\n"
+				+ "[1] Cuadrado\n[2] Rectángulo\n"
+				+ "[3] Triángulo\n[4] Círculo");
+		
+		int opcion = teclado.nextInt();
+		
+		switch (opcion) {
+		case 1:
+			double lado = Double.parseDouble(JOptionPane.showInputDialog(null, "Lado en cm: "));
+			System.out.println("Área del cuadrado:\n" + Math.pow(lado, 2) + " cm2");
+			break;
+		case 2:
+			double base1, altura1;
+			base1 = Double.parseDouble(JOptionPane.showInputDialog(null, "Base en cm: "));
+			altura1 = Double.parseDouble(JOptionPane.showInputDialog(null, "Altura en cm: "));
+			System.out.println("Área del rectángulo:\n" + base1*altura1 + " cm2");
+			break;
+		case 3:
+			double base2, altura2;
+			base2 = Double.parseDouble(JOptionPane.showInputDialog(null, "Base en cm: "));
+			altura2 = Double.parseDouble(JOptionPane.showInputDialog(null, "Altura en cm: "));
+			System.out.println("Área del triángulo:\n" + (base2*altura2)/2 + " cm2");
+			break;
+		case 4:
+			double radio = Double.parseDouble(JOptionPane.showInputDialog("Radio en cm: "));
+			System.out.println("Área del círculo:\n" + Math.PI*Math.pow(radio,2) + " cm2");
+			break;
+		default:
+			JOptionPane.showMessageDialog(null, "Opción errónea");
+		}
+		
 	}	
 	
 	public static void Condicionales(String[] args) {
