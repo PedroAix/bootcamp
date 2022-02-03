@@ -5,7 +5,30 @@ import javax.swing.JOptionPane;//Para GUI
 
 public class Tutorial1 {
 	
-	public static void Strings (String[] args) {
+	public static void main(String[] args) {
+
+	}	
+	
+	public static void Condicionales(String[] args) {
+				
+		 int edad = Integer.parseInt(JOptionPane.showInputDialog("Dime tu edad: ","Edad"));
+		 
+		 if (edad < 18) {
+			 JOptionPane.showMessageDialog(null, "Eres adolescente");
+		 }
+		 else if (edad < 40) {
+			 JOptionPane.showMessageDialog(null, "Eres joven");
+		 }
+		 else if (edad < 65) {
+			 JOptionPane.showMessageDialog(null, "Eres adulto");
+		 }
+		 else {
+			 JOptionPane.showMessageDialog(null, "Eres mayor");
+
+		 }
+	}
+	
+	public static void String (String[] args) {
 		
 //		substring devuelve una subcadena desde la posicion inicial hasta la final -1
 //		charAt devuelve el carácter en la posición indicada
@@ -60,7 +83,7 @@ public class Tutorial1 {
 		
 		a = Math.sqrt((b*b)+(c*c));
 		
-		System.out.println("El valor de la hipotenusa es: " + a);
+		System.out.printf("El valor de la hipotenusa es: " + "%1.2f",a); //Formato para que salga con 2 decimales
 		
 		scanner.close();
 		
