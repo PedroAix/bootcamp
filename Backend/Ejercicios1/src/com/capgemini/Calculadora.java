@@ -24,5 +24,14 @@ public class Calculadora {
 		return total;		  //calcularlo en la próxima iteración
 
 	}
+	
+	
+	//PRUEBAS JUNIT
+	public static Double divide(double operando1, double operando2) {
+		return operando1 / operando2;
+	}
 
+	public static int divide(int operando1, int operando2) {
+		return operando1 / operando2;
+	}
 }
