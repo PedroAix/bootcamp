@@ -6,7 +6,7 @@ import java.util.Random;//Para generar numeros aleatorios
 
 public class Tutorial1 {
 	
-	public static void main(String[] args) {
+	public static void While2(String[] args) {
 		
 		int num = 0, intentos = 0;
 		
@@ -33,7 +33,7 @@ public class Tutorial1 {
 		else System.out.println("CORRECTO!!!");
 	}
 	
-	public static void While(String[] args) {
+	public static void While1(String[] args) {
 		
 		//ADIVINA LA CONTRASEÑA
 		
