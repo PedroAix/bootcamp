@@ -6,7 +6,8 @@ import java.util.Random;
 public class Juego {
 	private int intento;
 	private Random rnd = new Random();
-	private int num_aleatorio;
+	//private (Debe ser privado num_aleatorio, pero esto es para las pruebas)
+	int num_aleatorio;
 	private String mensaje;
 	private boolean terminado;
 	
