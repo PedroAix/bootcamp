@@ -2,10 +2,57 @@ package com.tutoriales;
 
 import java.util.Scanner;//Para introducir valor por consola
 import javax.swing.JOptionPane;//Para GUI
+import java.util.Random;//Para generar numeros aleatorios
 
 public class Tutorial1 {
 	
-	public static void Figuras(String[] args) {
+	public static void main(String[] args) {
+		
+		int num = 0, intentos = 0;
+		
+		Scanner teclado = new Scanner(System.in);		
+		int aleatorio = new Random().nextInt(101);
+		System.out.println(aleatorio);
+		
+		while (!(aleatorio == num) && (intentos < 10)) {
+			intentos++;
+			System.out.print("Introduce un número entre 0 y 100 (intento " + intentos + " ): ");
+			num = teclado.nextInt();
+			
+			if (num < aleatorio) {
+				System.out.println("El número es más alto");
+			}
+			else if (num > aleatorio) {
+				System.out.println("El nñumero es más bajo");
+			}
+			
+		}
+		if (intentos == 10) {
+			System.out.println("HAS PERDIDO!!");
+		}
+		else System.out.println("CORRECTO!!!");
+	}
+	
+	public static void While(String[] args) {
+		
+		//ADIVINA LA CONTRASEÑA
+		
+		Scanner teclado = new Scanner(System.in);
+		
+		
+		
+		String clave = "abc123";
+		System.out.print("Introduce una contraseña: ");
+		String pass = teclado.nextLine();
+		
+		while (clave.equals(pass) == false) {
+			System.out.println("Introduce otra contraseña: ");
+			pass = teclado.nextLine();
+		}
+		System.out.println("Has iniciado sesión con éxito");
+	}
+	
+	public static void Switch(String[] args) {
 		
 		/**
 		 * PROGRAMA QUE CALCULA EL AREA DE
