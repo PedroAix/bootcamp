@@ -66,9 +66,6 @@ class JuegoTest {
 				() -> assertTrue(juego.getTerminado()),
 				() -> assertEquals(11,juego.getIntento()));
 	}
-	
-	
-	
 }
 
 	
