@@ -53,9 +53,24 @@ class JuegoTest {
 			() -> assertFalse(juego.getTerminado()),
 			() -> assertEquals(2,juego.getIntento()));
 		}
+	
+	
+	
+	@Test
+	void test_mensaje_intentos_maximo() {
+		for(int i = 0; i < 10; i++) { //PARA AUMENTAR EL NÚMERO DE INTENTOS
+			juego.jugada(49);
+		}
+		assertAll("Jugada",
+				() -> assertEquals("**INCORRECTO**\nTe has quedado sin intentos!\nEl número secreto era: 50",juego.getMessage()),
+				() -> assertTrue(juego.getTerminado()),
+				() -> assertEquals(11,juego.getIntento()));
 	}
 	
 	
+	
+}
+
 	
 	
 //	@Test
