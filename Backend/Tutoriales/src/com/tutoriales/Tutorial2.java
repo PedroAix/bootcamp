@@ -1,29 +1,43 @@
 package com.tutoriales;
 
+import javax.swing.JOptionPane;
+
 public class Tutorial2 {
 	
 	public static void main (String[] args) {
+		int opcion = Integer.parseInt(JOptionPane.showInputDialog(null,"Selecciona la opción deseada:\n[1] Círculo\n[2] Triángulo\n[3] Cuadrado\n"));
 		
-//		substring devuelve una subcadena desde la posicion inicial hasta la final -1
-//		charAt devuelve el carácter en la posición indicada
-//		equals compara si dos String son iguales (devuelve booleano)
-//		equalsIgnoreCase es igual que equals pero sin distinguir en mayusculas o minusculas
+		switch (opcion) {
+			case 1:
+				double radio = Double.parseDouble(JOptionPane.showInputDialog(null,"Introduce el valor del radio en cm: "));
+				JOptionPane.showInputDialog(null,"Área del círculo:\n" + AreaCirculo(radio) + " cm2");
+				break;
+			case 2:
+				double base = Double.parseDouble(JOptionPane.showInputDialog(null,"Introduce el valor de la base en cm: "));
+				double altura = Double.parseDouble(JOptionPane.showInputDialog(null,"Introduce el valor de la altura en cm: "));
+				JOptionPane.showInputDialog(null,"Área del triángulo:\n" + AreaTriangulo(base, altura) + " cm2");
+				
+				break;
+			case 3:
+				double lado = Double.parseDouble(JOptionPane.showInputDialog(null,"Introduce el valor del lado en cm: "));
+				JOptionPane.showInputDialog(null,"Área del cuadrado:\n" + AreaCuadrado(lado) + " cm2");
+				break;
+		}
 		
-		String nombre = "Pedro Aix Vinaroz";
+	}
+	public static double AreaCirculo(double radio) {
+		double resultado = Math.PI * Math.pow(radio,2);
+		return resultado;
 		
-		System.out.println("Hola, mi nombre es " + nombre);
+	}
+	
+	public static double AreaTriangulo(double base, double altura) {
+		double resultado = (base * altura) / 2;
+		return resultado;
 		
-		System.out.println("Tiene " + nombre.length() + " letras");
-		
-		System.out.println("La primera letra de mi nombre es " + nombre.charAt(0));//o nombre.substring(0,1)
-		
-		int ultimaletra = nombre.length();
-		System.out.println("La última letra es " + nombre.charAt(ultimaletra - 1));// o nombre.substring(ultimaletra) - 1)
-		
-		String alumno1, alumno2;
-		alumno1 = "PEDRo";
-		alumno2 = "Pedro";
-		System.out.println(alumno1.equals(alumno2));
-		System.out.println(alumno1.equalsIgnoreCase(alumno2));
+	}
+	public static double AreaCuadrado(double lado) {
+		double resultado = Math.pow(lado,2);
+		return resultado;
 	}
 }
