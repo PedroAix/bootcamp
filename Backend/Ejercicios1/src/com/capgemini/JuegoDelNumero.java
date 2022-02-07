@@ -8,15 +8,14 @@ public class JuegoDelNumero {
 	
 	public static void main(String[] args) {
 		
-		int num;
+		int numeroIntroducido;
 		Juego juego = new Juego();
-		//juego.inicializar(); Esta era la llamada al método que hacía antes.
-		//Ahora es el propio constructor el que se encarga de hacer la llamada.
 		
 		do {
 			try {
-				num = Integer.parseInt(JOptionPane.showInputDialog(null, "INTENTO Nº" + juego.getIntento() +"\nIntroduce un número del 1 al 100"));			
-				juego.jugada(num);
+				numeroIntroducido = Integer.parseInt(JOptionPane.showInputDialog(null, "INTENTO Nº" +
+						juego.getIntento() +"\nIntroduce un número del 1 al 100"));	
+				juego.jugada(numeroIntroducido);
 				JOptionPane.showMessageDialog(null, juego.getMessage());
 				
 			} catch (NumberFormatException error) {
