@@ -2,18 +2,18 @@ package com.capgemini;
 
 
 public class Carta {
-	private int valor;
-	private palosBarajaEspañola palo;
+	private final valoresCarta valor;
+	private final palosBarajaEspañola palo;
 
 
-	public Carta (int valor, palosBarajaEspañola palo) {
+	public Carta (valoresCarta valor, palosBarajaEspañola palo) {
 		this.valor = valor;
 		this.palo = palo;		
 	}
 
 	@Override
 	public String toString() {
-		return "Carta [valor=" + valor + ", palo=" + palo + "]";
+		return valor + " de " + palo;
 	}
 	
 }
