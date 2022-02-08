@@ -5,7 +5,123 @@ import javax.swing.JOptionPane;//Para GUI
 import java.util.Random;//Para generar numeros aleatorios
 
 public class Tutorial1 {
+	
+	public static void ArrayBidimensionalForeach2(String[] args) {
+		
+		double acumulado, interes = 0.10;
+		
+		double[][] saldo = new double[6][5];
+		
+		for(int i = 0; i < 6; i++) {
+			saldo[i][0] = 10000;
+			acumulado = 10000;
+			for(int j = 1; j < 5; j++) {
+				acumulado = acumulado + (acumulado*interes);
+				saldo[i][j] = acumulado;
+			}
+			interes = interes + 0.01;
+		}
+		
+		for(double[] fila:saldo) {
+			System.out.println();
+			for(double elemento:fila) {
+				System.out.print(elemento + "    ");
+			}
+		}
+		
+		
+	}
 
+	public static void ArrayBidimensionalForeach1(String[] args) {
+		
+		int[][] arrayBidimensional = {{1,2,3,4},
+				{5,6,7,8},{9,0,1,2},{3,4,5,6},
+				{7,8,9,0}};
+		
+		for(int[] fila:arrayBidimensional) {
+			System.out.println();
+			for(int elemento: fila) {
+				System.out.print(elemento + "   ");
+			}
+		}
+		
+	}
+	
+	public static void ArrayBidimensional(String[] args) {
+		
+		 int[][] arrayBidimensional = new int[4][5];
+		 Random rnd = new Random();
+		 
+		 for(int i = 0; i < 4; i++) {
+			 System.out.println("");
+			 for(int j = 0; j < 5; j++) {
+				 arrayBidimensional[i][j] = rnd.nextInt(10);
+				 System.out.print(arrayBidimensional[i][j] + "   ");
+			 }
+		 }
+		 System.out.print("\n\n" + arrayBidimensional[0][4]);
+
+	}
+	
+	public static void ArrayForeach2(String[] args) {
+		
+		Random rnd = new Random();
+		int[] matrizAleatorios = new int[150];
+		
+		for(int i = 0; i < matrizAleatorios.length; i++) {
+			matrizAleatorios[i] = rnd.nextInt(101);
+		}
+		
+		for(int numeroAleatorio:matrizAleatorios) {
+			System.out.print(numeroAleatorio + "|");
+		}
+		
+		
+		
+	}
+	
+	public static void ArrayForeach1(String[] args) {
+		
+		Scanner teclado = new Scanner(System.in);
+		String[] paises = new String[8];
+		
+		for (int i = 0; i < paises.length; i++) {
+			System.out.print("País " + (i + 1) + ": ");
+			paises[i] = teclado.nextLine();
+		}
+			
+//		for(int j = 0; j < paises.length; j++) {
+//			System.out.println(paises[j]);
+//			
+//		}
+		
+		for(String elemento:paises) {//BUCLE FOR EACH
+			
+			System.out.println(elemento);
+		}
+		
+		
+	}
+	
+	public static void Array(String[] args) {
+		
+		Scanner teclado = new Scanner(System.in);
+		int[] array = new int[5];
+//		int array[] = new int[5];
+//		int[] array = {1,2,4,8,2};
+		
+		
+		for(int i = 0; i < 5; i++) {
+			System.out.print("Valor para array " + i + ": " );
+			array[i] = teclado.nextInt();
+		}
+		
+		for( int i = 0; i < array.length; i++) {
+			System.out.print(array[i] + " | ");
+		}
+
+	}
+	
 	public static void For3(String[] args) {
 		
 		long resultado = 1L, numeroFactorial = Integer.parseInt(JOptionPane.showInputDialog("Introduce un número"
@@ -47,7 +163,7 @@ public class Tutorial1 {
 		for (int i = 0; i < 10; i++) {
 			System.out.println(nombre);
 		}
-
+		teclado.close();
 	}
 
 	public static void DoWhile2(String[] args) {
@@ -94,6 +210,7 @@ public class Tutorial1 {
 			System.out.println("HAS PERDIDO!!");
 		} else
 			System.out.println("CORRECTO!!!");
+		teclado.close();
 	}
 
 	public static void While2(String[] args) {
@@ -119,6 +236,7 @@ public class Tutorial1 {
 			System.out.println("HAS PERDIDO!!");
 		} else
 			System.out.println("CORRECTO!!!");
+		teclado.close();
 	}
 
 	public static void While1(String[] args) {
@@ -136,6 +254,7 @@ public class Tutorial1 {
 			pass = teclado.nextLine();
 		}
 		System.out.println("Has iniciado sesión con éxito");
+		teclado.close();
 	}
 
 	public static void Switch(String[] args) {
@@ -178,6 +297,7 @@ public class Tutorial1 {
 		default:
 			JOptionPane.showMessageDialog(null, "Opción errónea");
 		}
+		teclado.close();
 
 	}
 
