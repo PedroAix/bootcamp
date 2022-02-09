@@ -1,4 +1,4 @@
-package com.capgemini;
+package com.capgemini.JuegoCartas;
 
 public enum palosBarajaEspañola {
 	OROS(1), COPAS(2), ESPADAS(3), BASTOS(4);

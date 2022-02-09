@@ -1,5 +1,4 @@
-package com.capgemini;
-
+package com.capgemini.JuegoCartas;
 
 public class Carta {
 	private final valoresCarta valor;

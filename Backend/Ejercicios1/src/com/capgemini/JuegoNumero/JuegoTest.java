@@ -1,4 +1,4 @@
-package com.capgemini;
+package com.capgemini.JuegoNumero;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -17,7 +17,7 @@ class JuegoTest {
 	@BeforeEach
 	void setUp() throws Exception {
 		juego = new Juego();
-		juego.num_aleatorio = 50;
+		juego.numeroAleatorio = 50;
 	}
 
 	@Test

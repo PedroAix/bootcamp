@@ -1,4 +1,4 @@
-package com.capgemini;
+package com.capgemini.JuegoNumero;
 
 import javax.swing.JOptionPane;
 

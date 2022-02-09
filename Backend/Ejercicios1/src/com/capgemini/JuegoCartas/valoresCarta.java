@@ -1,4 +1,4 @@
-package com.capgemini;
+package com.capgemini.JuegoCartas;
 
 public enum valoresCarta {
 

@@ -1,4 +1,4 @@
-package com.capgemini;
+package com.capgemini.JuegoCalculadora;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -10,7 +10,7 @@ public class Decodificar {
 	public static String getData(){
 		String cadena = "";
 		try {
-			File archivo = new File("C:\\Curso\\Backend\\Ejercicios1\\src\\com\\capgemini\\calculadoraEntrada.txt");
+			File archivo = new File("C:\\Curso\\Backend\\Ejercicios1\\src\\com\\capgemini\\JuegoCalculadora\\calculadoraEntrada.txt");
 			Scanner leer = new Scanner(archivo);
 			while (leer.hasNextLine()) {
 				cadena = leer.nextLine();
