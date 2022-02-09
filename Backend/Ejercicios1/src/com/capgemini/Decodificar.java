@@ -6,10 +6,9 @@ import java.util.Scanner;
 
 public class Decodificar {
 	
-	public static void main(String[] args) {
-		
+	
+	public static String getData(){
 		String cadena = "";
-		
 		try {
 			File archivo = new File("C:\\Curso\\Backend\\Ejercicios1\\src\\com\\capgemini\\calculadoraEntrada.txt");
 			Scanner leer = new Scanner(archivo);
@@ -18,8 +17,16 @@ public class Decodificar {
 			}
 		} 
 		catch (FileNotFoundException e) {
+			System.out.println("Ha ocurrido un error...");
 			e.printStackTrace();
 		}
+		return cadena;
+	}
+	
+	
+	public static void main(String[] args) {
+		
+		String cadena = getData();
 		
 		cadena = cadena.replace(",", ".");
 		String[] cadena_separada = cadena.split("(?<=[-+*/])");
