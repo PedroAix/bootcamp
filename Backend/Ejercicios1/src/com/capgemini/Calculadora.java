@@ -1,5 +1,6 @@
 package com.capgemini;
 
+
 public class Calculadora {
 	private double total = 0.0;
 	private char pendiente = '+'; //Variable que guarda el operador

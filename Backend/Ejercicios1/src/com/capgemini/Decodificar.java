@@ -1,10 +1,26 @@
 package com.capgemini;
 
-public class Decodificar {
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 
+public class Decodificar {
+	
 	public static void main(String[] args) {
 		
-		String cadena = "3+4+3,4-7*1=";
+		String cadena = "";
+		
+		try {
+			File archivo = new File("C:\\Curso\\Backend\\Ejercicios1\\src\\com\\capgemini\\calculadoraEntrada.txt");
+			Scanner leer = new Scanner(archivo);
+			while (leer.hasNextLine()) {
+				cadena = leer.nextLine();
+			}
+		} 
+		catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		
 		cadena = cadena.replace(",", ".");
 		String[] cadena_separada = cadena.split("(?<=[-+*/])");
 		double total = 0.0;
