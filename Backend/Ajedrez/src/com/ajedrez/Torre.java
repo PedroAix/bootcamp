@@ -4,12 +4,15 @@ public class Torre extends Pieza {
 
 	public Torre(Color color) {
 		super(color);
-		// TODO Auto-generated constructor stub
 	}
-	
+
 	@Override
-	protected boolean esValido (Movimiento movimiento, Tablero tablero) {
-		return true;
+	protected boolean esValido(Movimiento movimiento, Tablero tablero) {
+		if (movimiento.esHorizontal() || movimiento.esVertical()) {
+			return true;
+		}
+
+		return false;
 	}
 
 }

@@ -12,15 +12,14 @@ public abstract class Pieza {
 		return color;
 	}
 
-	public void setColor(Color color) {
-		this.color = color;
-	}
-
 	protected abstract boolean esValido(Movimiento movimiento, Tablero tablero);
 
-	public void mover(Movimiento movimiento, Tablero tablero) {
+	public void mover(Movimiento movimiento, Tablero tablero) throws JuegoException {
 		if (esValido(movimiento,tablero)) {
-			
+			tablero.Mover(movimiento);
+		}
+		else {
+			throw new JuegoException("El movimiento no es válido para esa pieza");
 		}
 	}
 }
