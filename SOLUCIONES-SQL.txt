@@ -96,7 +96,7 @@ ORDER BY r.rental_id
 
 
 -Generar la lista diaria de alquileres vencidos no devueltos para poder llamar a los clientes y pedirles que los devuelvan, para ello debe mostrar las fechas de alquiler y vencimiento, el teléfono y nombre del cliente, así como el titulo de la película, priorizando los que mas tiempo llevan vencidos.
-SELECT r.rental_date AS Fecha_Alquiler, 
+SELECT r.return_date AS Fecha_Devolución, r.rental_date AS Fecha_Alquiler, 
 a.phone AS Teléfono, c.first_name AS Cliente, f.title AS Título
 FROM rental r
 INNER JOIN inventory i
