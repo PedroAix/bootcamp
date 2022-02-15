@@ -9,6 +9,11 @@ public class Empleado {
 	private double sueldoEmple;
 	private Date altaEmple;
 	
+	public Empleado() {
+		//Constructor por defecto: no recibe parametros
+		// ni da un estado inicial
+	}
+	
 	public Empleado(String nombre, double sueldoEmple, int año, int mes, int dia) {
 		
 		nombreEmple = nombre;
@@ -19,9 +24,14 @@ public class Empleado {
 		
 	}
 	
+	public Empleado(String nombreEmple) {//SOBRECARGA DE CONSTRUCTORES: Varios constructores en una clase, con diferentes parametros
+		this(nombreEmple, 30000, 2002,01,25);//Este this llama al otro constructor. Si hubieran más constructores
+											 //llamará al que coincida con los parámetros del this
+	}										 //Parecido a establecer unos valores por defecto
 	
 	
-	public String getNombreEmple() {
+	
+	public String getNombreEmple() {//SOBRECARGA DE MÉTODOS: Misma filosofía que los constructores pero con métodos
 		return nombreEmple;
 	}
 	
