@@ -96,7 +96,7 @@ ORDER BY r.rental_id
 
 
 -Generar la lista diaria de alquileres vencidos no devueltos para poder llamar a los clientes y pedirles que los devuelvan, para ello debe mostrar las fechas de alquiler y vencimiento, el teléfono y nombre del cliente, así como el titulo de la película, priorizando los que mas tiempo llevan vencidos.
-SELECT r.return_date AS Fecha_Vencimiento, r.rental_date AS Fecha_Alquiler, 
+SELECT r.rental_date AS Fecha_Alquiler, 
 a.phone AS Teléfono, c.first_name AS Cliente, f.title AS Título
 FROM rental r
 INNER JOIN inventory i
@@ -107,8 +107,8 @@ INNER JOIN customer c
 ON r.customer_id = c.customer_id
 INNER JOIN address a
 ON c.address_id = a.address_id
-WHERE r.return_date IS NOT NULL
-ORDER BY DATEDIFF(r.return_date, r.rental_date) DESC
+WHERE r.return_date IS NULL
+ORDER BY Fecha_Alquiler
 
 
 -Elaborar el ranking de los países que más alquilan las películas de GINA DEGENERES.
