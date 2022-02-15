@@ -13,7 +13,6 @@ public class PrincipalEmpleado {
 		arrayEmple[3] = new Empleado();//LLAMADA AL CONSTRUCTOR POR DEFECTO
 
 		
-		
 		for (Empleado empleado : arrayEmple) {
 				empleado.setSubirSueldo(25);
 				System.out.println("Nombre: " + empleado.getNombreEmple() + "\nSueldo: " + empleado.getSueldoEmple()

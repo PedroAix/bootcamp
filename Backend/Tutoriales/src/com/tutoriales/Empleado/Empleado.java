@@ -31,6 +31,7 @@ public class Empleado {
 	
 	
 	
+	
 	public String getNombreEmple() {//SOBRECARGA DE MÉTODOS: Misma filosofía que los constructores pero con métodos
 		return nombreEmple;
 	}
