@@ -2,6 +2,7 @@ package com.tutoriales;
 
 public class ExplicacionStatic {
 
+	
 	public static void main(String[] args) {
 		Empleados empleado1 = new Empleados("Pedro Aix");
 		Empleados empleado2 = new Empleados("Mariola Navarro");
