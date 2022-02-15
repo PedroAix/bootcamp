@@ -53,14 +53,13 @@ WHERE country IN ("China", "Taiwan")
 -Mostrar los datos de las tiendas, conocidas por la ciudad y país donde están ubicadas, indicando el nombre del gerente, el numero de películas en inventario, el numero de títulos diferentes y el número de clientes atendidos.
 SELECT c.city AS Ciudad, co.country AS País,
 CONCAT(s.first_name, ' ', s.last_name) AS NombreStaff, COUNT(i.film_id) AS nºPeliculas,
-COUNT(DISTINCT i.film_id) AS TitulosDiferentes, COUNT(DISTINCT r.customer_id) AS ClientesAtendidos
+COUNT(DISTINCT i.film_id) AS TitulosDiferentes, 
+(SELECT count(DISTINCT customer_id) FROM rental) AS ClientesAtendidos
 FROM store st
 INNER JOIN address a
 ON st.address_id = a.address_id
 INNER JOIN inventory i
 ON st.store_id = i.store_id
-INNER JOIN rental r
-ON i.inventory_id = r.inventory_id
 INNER JOIN city c
 ON a.city_id = c.city_id
 INNER join country co 
