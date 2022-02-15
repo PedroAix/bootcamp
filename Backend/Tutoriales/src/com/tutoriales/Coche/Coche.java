@@ -1,7 +1,6 @@
 package com.tutoriales.Coche;
 
 
-
 public class Coche {
 
 	private int ruedasCoche, largoCoche, anchoCoche, motorCoche, pesoCoche, pesoTotalCoche;
