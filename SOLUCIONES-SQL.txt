@@ -71,8 +71,67 @@ GROUP BY i.store_id
 
 
 -Obtener el listado detallado de alquileres indicando el identificador de alquiler, el titulo alquilado, las fechas de alquiler, devolución y tiempo transcurrido, nombres del cliente (nombre con apellidos), empleado (nombre con apellidos) y tienda (ciudad, país).
+SELECT r.rental_id AS ID_Alquiler, f.title AS Título, r.rental_date AS Fecha_Alquiler,
+r.return_date AS Fecha_Devolución, concat(DATEDIFF(r.return_date, r.rental_date), ' ','dias') AS Tiempo_Transcurrido,
+concat(c.first_name, ' ', c.last_name) AS Cliente, CONCAT(s.first_name, ' ', s.last_name) AS Empleado,
+CONCAT(ci.city, ' ', co.country) AS Tienda
+FROM rental r
+INNER JOIN inventory i
+ON r.inventory_id = i.inventory_id
+INNER JOIN film_text f
+ON i.film_id = f.film_id
+INNER JOIN customer c
+ON r.customer_id = c.customer_id
+INNER JOIN staff s
+ON r.staff_id = s.staff_id
+INNER JOIN store st
+ON st.manager_staff_id = s.staff_id
+INNER JOIN address a
+ON st.address_id = a.address_id
+INNER JOIN city ci
+ON ci.city_id = a.city_id
+INNER JOIN country co
+ON co.country_id = ci.country_id
+ORDER BY r.rental_id
 
 
+-Generar la lista diaria de alquileres vencidos no devueltos para poder llamar a los clientes y pedirles que los devuelvan, para ello debe mostrar las fechas de alquiler y vencimiento, el teléfono y nombre del cliente, así como el titulo de la película, priorizando los que mas tiempo llevan vencidos.
+SELECT r.return_date AS Fecha_Vencimiento, r.rental_date AS Fecha_Alquiler, 
+a.phone AS Teléfono, c.first_name AS Cliente, f.title AS Título
+FROM rental r
+INNER JOIN inventory i
+ON r.inventory_id = i.inventory_id
+INNER JOIN film_text f
+ON i.film_id = f.film_id
+INNER JOIN customer c
+ON r.customer_id = c.customer_id
+INNER JOIN address a
+ON c.address_id = a.address_id
+WHERE r.return_date IS NOT NULL
+ORDER BY DATEDIFF(r.return_date, r.rental_date) DESC
 
-Generar la lista diaria de alquileres vencidos no devueltos para poder llamar a los clientes y pedirles que los devuelvan, para ello debe mostrar las fechas de alquiler y vencimiento, el teléfono y nombre del cliente, así como el titulo de la película, priorizando los que mas tiempo llevan vencidos.
-Elaborar el ranking de los países que más alquilan las películas de GINA DEGENERES.
+
+-Elaborar el ranking de los países que más alquilan las películas de GINA DEGENERES.
+SELECT co.country AS País, COUNT(co.country) AS nºPelículas
+FROM rental r
+INNER JOIN customer c
+ON c.customer_id = r.customer_id
+INNER JOIN address a
+ON c.address_id = a.address_id
+INNER JOIN city ci
+ON ci.city_id = a.city_id
+INNER JOIN country co
+ON co.country_id = ci.country_id
+INNER JOIN inventory i
+ON i.inventory_id = r.inventory_id
+INNER JOIN film f
+ON f.film_id = i.film_id
+INNER JOIN film_actor fact
+ON fact.film_id = f.film_id
+INNER JOIN actor act
+ON act.actor_id = fact.actor_id
+WHERE act.first_name IN ('GINA') AND act.last_name IN ('DEGENERES')
+GROUP BY co.country
+ORDER BY nºPelículas DESC
+
+
