@@ -5,6 +5,7 @@ import java.util.GregorianCalendar;
 
 public class Empleado {
 
+	
 	private String nombreEmple;
 	private double sueldoEmple;
 	private Date altaEmple;
