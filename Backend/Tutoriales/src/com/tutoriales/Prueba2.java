@@ -1,8 +1,9 @@
 package com.tutoriales;
 
+
 import java.util.Scanner;
 
-public class Prueba {
+public class Prueba2 {
 	public static void main (String[] args) {
 		
 		int[][] tablero = new int[8][8];
