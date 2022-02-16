@@ -21,6 +21,7 @@ public class Furgoneta extends Coche{
 		super();
 		//super llama al constructor de la clase padre (Coche)
 		//Entrará dentro del construtor Coche e inicializará las variables (atributos)
+		//Como el constructor padre no recibe parámetros dejamos super() sin pasarle parámetros
 		
 		this.plazasExtra = plazasExtra;
 		this.capacidadCarga = capacidadCarga;
