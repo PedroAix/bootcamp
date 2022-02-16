@@ -1,6 +1,6 @@
 package com.tutoriales;
 
-public class ExplicacionStatic {
+public class Prueba {
 
 	
 	public static void main(String[] args) {
