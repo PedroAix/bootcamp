@@ -30,6 +30,7 @@ public class Decodificar {
 		
 		cadena = cadena.replace(",", ".");
 		String[] cadena_separada = cadena.split("(?<=[-+*/])");
+		
 		double total = 0.0;
 		
 		Calculadora calcular = new Calculadora();
