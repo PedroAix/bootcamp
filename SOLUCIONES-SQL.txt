@@ -136,4 +136,27 @@ WHERE act.first_name IN ('GINA') AND act.last_name IN ('DEGENERES')
 GROUP BY co.country
 ORDER BY nºPelículas DESC
 
+-----------------------------AÑADIR RANKING--------------------------------
+SELECT DENSE_RANK() OVER(ORDER BY COUNT(co.country) DESC) AS Ranking, co.country AS País, COUNT(co.country)AS nºPelículas
+FROM rental r
+INNER JOIN customer c
+ON c.customer_id = r.customer_id
+INNER JOIN address a
+ON c.address_id = a.address_id
+INNER JOIN city ci
+ON ci.city_id = a.city_id
+INNER JOIN country co
+ON co.country_id = ci.country_id
+INNER JOIN inventory i
+ON i.inventory_id = r.inventory_id
+INNER JOIN film f
+ON f.film_id = i.film_id
+INNER JOIN film_actor fact
+ON fact.film_id = f.film_id
+INNER JOIN actor act
+ON act.actor_id = fact.actor_id
+WHERE act.first_name IN ('GINA') AND act.last_name IN ('DEGENERES')
+GROUP BY co.country
+ORDER BY nºPelículas DESC
+
 
