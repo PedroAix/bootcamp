@@ -1,6 +1,8 @@
 package com.tutoriales.Empleado;
 
-public class Jefatura extends Empleado {
+/*final*/ public class Jefatura extends Empleado {//Con FINAL indicamos que otra clase no puede heredar de Jefatura
+	
+	
 	//SI LO DEJAMOS VACÍO LLAMAMOS AL CONSTRUCTOR POR DEFECTO
 
 	private double incentivo;

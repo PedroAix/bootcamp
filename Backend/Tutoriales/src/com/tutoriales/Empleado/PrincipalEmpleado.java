@@ -19,8 +19,18 @@ public class PrincipalEmpleado {
 		// En este caso, espera guardar en el array un objeto Empleado, pero guardamos
 		// un objeto Jefatura
 
+		
 		arrayEmple[5] = new Jefatura("Maria Canovas", 5000, 1999, 11, 02);// POLIMORFISMO DE NUEVO
-
+		Jefatura jefaFinanzas = (Jefatura) arrayEmple[5];//CASTING para convertir un tipo de objeto en otro
+		//El casting funciona porque convertimos un objeto de tipo Jefatura guardado en la pos5 en su tipo padre
+		jefaFinanzas.setIncentivo(5000);
+		
+		
+		//Jefatura jefaFinanzas2 = (Jefatura) arrayEmple[1];
+		//Esta línea da error porque no puedo convertir un objeto de tipo Empleado (Padre)
+		//en otro objeto de tipo hijo (Jefatura)
+		
+		
 		for (Empleado empleado : arrayEmple) {
 			empleado.setSubirSueldo(25);
 			System.out.println("Nombre: " + empleado.getNombreEmple() + "\nSueldo: " + empleado.getSueldoEmple()
