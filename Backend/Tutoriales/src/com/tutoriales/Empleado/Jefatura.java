@@ -5,6 +5,7 @@ public class Jefatura extends Empleado {
 
 	private double incentivo;
 	
+	
 	public Jefatura(String nombre, double sueldo, int año, int mes, int dia) {
 		
 		super(nombre, sueldo, año, mes, dia);

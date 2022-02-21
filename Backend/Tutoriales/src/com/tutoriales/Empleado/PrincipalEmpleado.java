@@ -32,7 +32,7 @@ public class PrincipalEmpleado {
 			// mientras que en el resto de ocasiones llamará a los métodos de la clase
 			// Empleado
 			// POLIMORFISMO
-			// Cómo es capaz de detectar la MV la clase a la que tiene que llamar? ->
+			// Como es capaz de detectar la MV la clase a la que tiene que llamar? ->
 			// Enlazado dinámico
 			// Enlazado dinámico: saber en tiempo de ejecución a qué metodo llamar
 			// (perteneciente a la clase padre o a la subclase)
