@@ -25,7 +25,7 @@ public class Tablero {
 			throw new JuegoException("La columna o la fila no son válidas");
 		}
 		if (pieza == null) {
-			throw new NullPointerException("No hay pieza");
+			throw new IllegalArgumentException("Pieza es null");
 		}
 
 		if (HayPieza(columna, fila)) {
@@ -82,7 +82,7 @@ public class Tablero {
 
 	public void Mover(Movimiento movimiento) throws JuegoException {
 		if (movimiento == null) {
-			throw new NullPointerException("Movimiento es null");
+			throw new IllegalArgumentException("Movimiento es null");
 		}
 		if (HayPieza(movimiento.getPosIni())) {
 			setPieza(movimiento.getPosFin(), getPieza(movimiento.getPosIni()));
@@ -108,7 +108,7 @@ public class Tablero {
 
 	public boolean HayPiezasEntre(Movimiento movimiento) throws JuegoException {
 		if (movimiento == null) {
-			throw new NullPointerException("El movimiento es null");
+			throw new IllegalArgumentException("El movimiento es null");
 		}
 
 		if (movimiento.esVertical() || movimiento.esHorizontal() || movimiento.esDiagonal()) {
