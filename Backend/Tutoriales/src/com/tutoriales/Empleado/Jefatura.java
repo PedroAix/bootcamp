@@ -22,6 +22,7 @@ package com.tutoriales.Empleado;
 		this.incentivo = incentivo;
 	}
 	
+	@Override
 	public double getSueldoEmple() {
 		//Cuando heredamos un método de la clase padre y, por otro lado, creamos un método que se llama igual
 		//el método hijo sobreescribe al método de la clase padre (indicado con un triangulo verde)

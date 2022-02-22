@@ -38,7 +38,7 @@ public class Empleado {
 		return nombreEmple;
 	}
 	
-	public /*final*/ double getSueldoEmple() { //FINAL en un metodo indica que no puede ser sobreescrito por una clase heredada
+	public /*final*/ double getSueldoEmple() { //FINAL en un metodo indica que no puede ser sobreescrito por una clase heredada (evita la sobreescritura)
 		return sueldoEmple;
 	}
 
