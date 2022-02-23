@@ -23,7 +23,7 @@ public class Uso_Persona {
 
 
 
-abstract class Persona {//CLASE ABSTRACTA (puede tener 0 o al menos 1 método abstracto)
+abstract class Persona {//CLASE ABSTRACTA (puede tener como mínimo 0 métodos abstractos)
 						//Marca el diseño de la jerarquía de la herencia
 	private String nombre;
 	
