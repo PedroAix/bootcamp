@@ -14,6 +14,7 @@ public class Empleado {
 	public Empleado() {
 		//Constructor por defecto: no recibe parametros
 		// ni da un estado inicial
+		//Cuando una clase no tiene constructor, por defecto siempre tiene el constructor por defecto
 	}
 	
 	public Empleado(String nombre, double sueldoEmple, int año, int mes, int dia) {
