@@ -11,6 +11,11 @@ public enum Posicion {
 		this.valor = valor;
 	}
 
+	
+	
+	public int getValor() {
+		return valor;
+	}
 
 	public static Posicion getPosicionEnum(int valor) {
 		switch (valor) {
