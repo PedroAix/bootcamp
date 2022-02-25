@@ -17,6 +17,13 @@ public class Futbolista {
 
 	}
 	
+	public Futbolista(String nombre, int dorsal, int posicion, Equipo equipo) {
+		
+		this.nombre = nombre;
+		this.dorsal = dorsal;
+		this.posicion = Posicion.getPosicionEnum(posicion);
+		this.equipo = equipo;
+	}
 	
 	
 	
@@ -34,5 +41,6 @@ public class Futbolista {
 	public int getDorsal() {
 		return dorsal;
 	}
+
 
 }
