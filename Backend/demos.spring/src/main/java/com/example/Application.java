@@ -4,6 +4,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import com.example.domains.contracts.repositories.LanguageRepository;
 import com.example.ioc.Servicio;
 
 @SpringBootApplication
@@ -13,13 +14,15 @@ public class Application implements CommandLineRunner{
 		SpringApplication.run(Application.class, args);
 	}
 	
+	
 	@Autowired
-	Servicio srv;
+	LanguageRepository dao;
+	
 	
 	
 	@Override
 	public void run(String... args) throws Exception {
-		srv.run();
+		
 	}
 
 }
