@@ -150,6 +150,11 @@ public class Language extends EntityBase<Language> implements Serializable {
 		Language other = (Language) obj;
 		return languageId == other.languageId;
 	}
+
+	@Override
+	public String toString() {
+		return "Language [languageId=" + languageId + ", name=" + name + "]";
+	}
 	
 	
 	
