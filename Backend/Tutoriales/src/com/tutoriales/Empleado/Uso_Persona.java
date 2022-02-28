@@ -24,7 +24,7 @@ public class Uso_Persona {
 
 
 abstract class Persona {//CLASE ABSTRACTA (puede tener como mínimo 0 métodos abstractos)
-						//Marca el diseño de la jerarquía de la herencia
+						//Marca el diseño de la jerarquía de la herencia, son clases que no se pueden instanciar
 	private String nombre;
 	
 	
@@ -40,7 +40,7 @@ abstract class Persona {//CLASE ABSTRACTA (puede tener como mínimo 0 métodos abs
 	}
 	
 	public abstract String getDescripcion();//METODO ABSTRACTO (no tiene cuerpo)
-	//Si una clase tiene un método abstracto, esa clase debe ser abstracta
+	//Si una clase tiene un método abstracto, esa clase debe ser abstracta (puede no tener metodos abstractos y ser abstracta también)
 	//Las clases que heredan están obligadas a sobreescribir el/los métodos abstractos (son obligatorios)
 	
 }
