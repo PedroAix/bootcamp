@@ -1,5 +1,7 @@
 package com.tutoriales.Empleado;
 
+import java.util.Arrays;
+
 public class PrincipalEmpleado {
 
 	public static void main(String[] args) {
@@ -29,6 +31,11 @@ public class PrincipalEmpleado {
 		//Jefatura jefaFinanzas2 = (Jefatura) arrayEmple[1];
 		//Esta línea da error porque no puedo convertir un objeto de tipo Empleado (Padre)
 		//en otro objeto de tipo hijo (Jefatura)
+		
+		
+		
+		Arrays.sort(arrayEmple);
+		
 		
 		
 		for (Empleado empleado : arrayEmple) {
