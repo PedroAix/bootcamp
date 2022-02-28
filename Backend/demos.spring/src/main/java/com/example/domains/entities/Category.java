@@ -9,6 +9,7 @@ import org.hibernate.annotations.GenerationTime;
 import org.hibernate.validator.constraints.Length;
 
 import com.example.domains.core.entities.EntityBase;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -19,7 +20,6 @@ import java.util.Objects;
 
 /**
  * The persistent class for the category database table.
- * @param <E>
  * 
  */
 @Entity
@@ -31,17 +31,17 @@ public class Category extends EntityBase<Category> implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="category_id")
-	@JsonProperty ("id")
+	@JsonProperty("id")
 	private int categoryId;
 
-	@Generated(value = GenerationTime.ALWAYS)
 	@Column(name="last_update")
+	@Generated(value = GenerationTime.ALWAYS)
+	@JsonFormat(pattern = "yyyy-MM-dd hh:mm:ss")
 	private Timestamp lastUpdate;
 
-	
 	@NotBlank
 	@Length(max = 25)
-	@JsonProperty ("categoria")
+	@JsonProperty("categoria")
 	private String name;
 
 	//bi-directional many-to-one association to FilmCategory
@@ -49,11 +49,9 @@ public class Category extends EntityBase<Category> implements Serializable {
 	@JsonIgnore
 	private List<FilmCategory> filmCategories;
 
-	
-	
 	public Category() {
 	}
-	
+
 	public Category(int categoryId) {
 		super();
 		this.categoryId = categoryId;
@@ -64,7 +62,6 @@ public class Category extends EntityBase<Category> implements Serializable {
 		this.categoryId = categoryId;
 		this.name = name;
 	}
-
 
 	public int getCategoryId() {
 		return this.categoryId;
@@ -111,12 +108,10 @@ public class Category extends EntityBase<Category> implements Serializable {
 
 		return filmCategory;
 	}
-	
-	
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(categoryId, filmCategories, lastUpdate, name);
+		return Objects.hash(categoryId);
 	}
 
 	@Override
@@ -126,14 +121,8 @@ public class Category extends EntityBase<Category> implements Serializable {
 		if (!(obj instanceof Category))
 			return false;
 		Category other = (Category) obj;
-		return categoryId == other.categoryId && Objects.equals(filmCategories, other.filmCategories)
-				&& Objects.equals(lastUpdate, other.lastUpdate) && Objects.equals(name, other.name);
+		return categoryId == other.categoryId;
 	}
-	
-	
-	
-	
-	
-	
 
+	
 }
