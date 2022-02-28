@@ -15,7 +15,7 @@ public class Empleado implements Comparable {
 	//Suelen aparecer en cursiva en los diagramas
 	//MUY PARECIDAS A LAS CLASES ABSTRACTAS
 	//DIFERENCIA: No pueden haber métodos normales (todos son abstractos) 
-	//DIFERENCIA: Permiten la herencia múltiple (heredar una o varias interfaces)
+	//DIFERENCIA: Permiten la herencia múltiple (heredar una o varias interfaces, ya que en Java no se pueden hacer varios extends seguidos, pero sí implements)
 	
 	
 	

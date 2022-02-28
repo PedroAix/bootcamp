@@ -28,9 +28,23 @@ public class PrincipalEmpleado {
 		jefaFinanzas.setIncentivo(5000);
 		
 		
+		System.out.println(jefaFinanzas.tomaDecision("Dar más días de vacaciones a los empleados"));
+		
+		
+		
 		//Jefatura jefaFinanzas2 = (Jefatura) arrayEmple[1];
 		//Esta línea da error porque no puedo convertir un objeto de tipo Empleado (Padre)
 		//en otro objeto de tipo hijo (Jefatura)
+		
+		
+		
+//		Empleado directorComercial = new Jefatura("Sandra González", 7800, 1997, 10, 10);//Principio de sustitución
+//		Comparable ejemplo = new Empleado("Elisabeth", 95000, 2000, 8, 14);//Principio de sustitución
+//		
+//		if (directorComercial instanceof Empleado) //Instance of comprueba si la variable hereda de la clase o interfaz indicada (si implementa a esa clase o interfaz)
+//			System.out.println("Es de tipo jefatura");
+//		if (ejemplo instanceof Comparable)
+//			System.out.println("Implementa la interfaz Comparable");
 		
 		
 		

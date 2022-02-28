@@ -1,6 +1,7 @@
 package com.tutoriales.Empleado;
 
-/*final*/ public class Jefatura extends Empleado {//Con FINAL indicamos que otra clase no puede heredar de Jefatura
+/*final*/ public class Jefatura extends Empleado implements Jefes {//Ejemplo de "herencia múltiple: hereda de una clase e implementa un interfaz
+	//Con FINAL indicamos que otra clase no puede heredar de Jefatura
 	
 	
 	//SI LO DEJAMOS VACÍO LLAMAMOS AL CONSTRUCTOR POR DEFECTO
@@ -14,8 +15,10 @@ package com.tutoriales.Empleado;
 		//Pasamos parámetros porque los constructores de la clase padre reciben parámetros.
 		//Dependiendo de los parámetros que le pasemos, se llamará a un constructor o a otro (De la clase padre)
 		
-		
-		
+	}
+	
+	public String tomaDecision (String decision) {
+		return "Un miembro de la dirección ha tomado la decisión de: " + decision;
 	}
 
 	public void setIncentivo(double incentivo) {
