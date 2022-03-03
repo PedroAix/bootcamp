@@ -8,8 +8,11 @@ import com.example.domains.contracts.repositories.CategoryRepository;
 import com.example.domains.contracts.repositories.CiudadesRepository;
 import com.example.domains.contracts.repositories.FilmRepository;
 import com.example.domains.contracts.repositories.LanguageRepository;
+import com.example.domains.contracts.repositories.RentalRepository;
 import com.example.ioc.Servicio;
+import springfox.documentation.oas.annotations.EnableOpenApi;
 
+@EnableOpenApi
 @SpringBootApplication
 public class Application implements CommandLineRunner{
 
@@ -18,8 +21,11 @@ public class Application implements CommandLineRunner{
 	}
 	
 	
+//	@Autowired
+//	FilmRepository dao;
+	
 	@Autowired
-	FilmRepository dao;
+	RentalRepository dao;
 	
 	
 	

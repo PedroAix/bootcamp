@@ -6,10 +6,12 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 import com.example.domains.entities.City;
 import com.example.domains.entities.Country;
 
+@RepositoryRestResource(exported = false)
 public interface CiudadesRepository extends JpaRepository<City, Integer> {
 	<T> List<T> findByCityIdIsNotNull(Class<T> type);
 	<T> Iterable<T> findByCityIdIsNotNull(Sort sort, Class<T> type);
