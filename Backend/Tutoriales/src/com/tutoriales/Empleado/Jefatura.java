@@ -20,6 +20,11 @@ package com.tutoriales.Empleado;
 	public String tomaDecision (String decision) {
 		return "Un miembro de la dirección ha tomado la decisión de: " + decision;
 	}
+	
+	public double setBonus(double gratificacion) {
+		double prima = 2000;
+		return Trabajadores.bonusBase + gratificacion + prima;
+	}
 
 	public void setIncentivo(double incentivo) {
 		this.incentivo = incentivo;

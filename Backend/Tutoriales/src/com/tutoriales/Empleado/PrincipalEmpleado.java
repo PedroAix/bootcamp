@@ -21,20 +21,26 @@ public class PrincipalEmpleado {
 		// En este caso, espera guardar en el array un objeto Empleado, pero guardamos
 		// un objeto Jefatura
 
-		
 		arrayEmple[5] = new Jefatura("Maria Canovas", 5000, 1999, 11, 02);// POLIMORFISMO DE NUEVO
-		Jefatura jefaFinanzas = (Jefatura) arrayEmple[5];//CASTING para convertir un tipo de objeto en otro
-		//El casting funciona porque convertimos un objeto de tipo Jefatura guardado en la pos5 en su tipo padre
+		Jefatura jefaFinanzas = (Jefatura) arrayEmple[5];// CASTING para convertir un tipo de objeto en otro
+		// El casting funciona porque convertimos un objeto de tipo Jefatura guardado en
+		// la pos5 en su tipo padre
 		jefaFinanzas.setIncentivo(5000);
+
+		// Jefatura jefaFinanzas2 = (Jefatura) arrayEmple[1];
+		// Esta línea da error porque no puedo convertir un objeto de tipo Empleado
+		// (Padre)
+		// en otro objeto de tipo hijo (Jefatura)
+
 		
 		
 		System.out.println(jefaFinanzas.tomaDecision("Dar más días de vacaciones a los empleados"));
-		
-		
-		
-		//Jefatura jefaFinanzas2 = (Jefatura) arrayEmple[1];
-		//Esta línea da error porque no puedo convertir un objeto de tipo Empleado (Padre)
-		//en otro objeto de tipo hijo (Jefatura)
+
+		System.out.println(
+				"El Jefe " + jefaFinanzas.getNombreEmple() + " tiene un bonus de: " + jefaFinanzas.setBonus(500));
+
+		System.out.println(arrayEmple[3].getNombreEmple() + " tiene un bonus de: " + arrayEmple[3].setBonus(200));
+
 		
 		
 		
@@ -45,13 +51,9 @@ public class PrincipalEmpleado {
 //			System.out.println("Es de tipo jefatura");
 //		if (ejemplo instanceof Comparable)
 //			System.out.println("Implementa la interfaz Comparable");
-		
-		
-		
+
 		Arrays.sort(arrayEmple);
-		
-		
-		
+
 		for (Empleado empleado : arrayEmple) {
 			empleado.setSubirSueldo(25);
 			System.out.println("Nombre: " + empleado.getNombreEmple() + "\nSueldo: " + empleado.getSueldoEmple()
@@ -65,7 +67,7 @@ public class PrincipalEmpleado {
 			// POLIMORFISMO
 			// Como es capaz de detectar la MV la clase a la que tiene que llamar? ->
 			// Enlazado dinámico
-			
+
 			// Enlazado dinámico: saber en tiempo de ejecución a qué metodo llamar
 			// (perteneciente a la clase padre o a la subclase)
 		}
