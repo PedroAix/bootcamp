@@ -7,7 +7,10 @@ import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -15,7 +18,10 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import com.example.domains.contracts.repositories.RentalRepository;
+import com.example.domains.entities.Customer;
+import com.example.domains.entities.Inventory;
 import com.example.domains.entities.Rental;
+import com.example.domains.entities.Staff;
 import com.example.exceptions.DuplicateKeyException;
 import com.example.exceptions.InvalidDataException;
 import com.example.exceptions.NotFoundException;
@@ -26,10 +32,15 @@ class RentalServiceImplTest {
 	
 	@BeforeEach
 	void setUp() throws Exception {
-		listado = new ArrayList<Rental>();
-		listado.add(new Rental(1));
-		listado.add(new Rental(2));
-		dao = mock(RentalRepository.class);
+		DateFormat df = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+        String fecha1 = "2022-03-04 13:38:50";
+        String fecha2 = "2022-03-05 13:38:50";
+        Date result1 = df.parse(fecha1);
+        Date result2 = df.parse(fecha2);
+        listado = new ArrayList<Rental>();
+        listado.add(new Rental(1, result1, result2, new Inventory(1), new Customer(1), new Staff(2)));
+        listado.add(new Rental(2, result1, result2, new Inventory(1), new Customer(1), new Staff(2)));
+        dao = mock(RentalRepository.class);
 	}
 
 	@Test

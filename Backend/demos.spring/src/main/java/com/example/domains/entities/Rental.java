@@ -4,12 +4,13 @@ import java.io.Serializable;
 import javax.persistence.*;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Positive;
+import javax.validation.constraints.NotNull;
 
 import org.hibernate.annotations.Generated;
 import org.hibernate.annotations.GenerationTime;
 
 import com.example.domains.core.entities.EntityBase;
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -32,38 +33,38 @@ public class Rental extends EntityBase<Rental> implements Serializable {
 	@Column(name = "rental_id")
 	private int rentalId;
 
-	@NotBlank
+	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "rental_date")
+	@JsonFormat(pattern = "yyyy-MM-dd hh:mm:ss")
 	private Date rentalDate;
 
 	// bi-directional many-to-one association to Inventory
-	@NotBlank
-	@Positive
+	@NotNull
 	@ManyToOne
 	@JoinColumn(name = "inventory_id")
 	private Inventory inventory;
 
 	// bi-directional many-to-one association to Customer
-	@NotBlank
-	@Positive
+	@NotNull
 	@ManyToOne
 	@JoinColumn(name = "customer_id")
 	private Customer customer;
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "return_date")
+	@JsonFormat(pattern = "yyyy-MM-dd hh:mm:ss")
 	private Date returnDate;
 	
 	// bi-directional many-to-one association to Staff
-	@NotBlank
-	@Positive
+	@NotNull
 	@ManyToOne
 	@JoinColumn(name = "staff_id")
 	private Staff staff;
 
 	@Column(name = "last_update")
 	@Generated(value = GenerationTime.ALWAYS)
+	@JsonFormat(pattern = "yyyy-MM-dd hh:mm:ss")
 	private Timestamp lastUpdate;
 	
 	// bi-directional many-to-one association to Payment
@@ -81,14 +82,14 @@ public class Rental extends EntityBase<Rental> implements Serializable {
 		this.rentalId = rentalId;
 	}
 
-	public Rental(int rentalId, @NotBlank Date rentalDate, @Positive Inventory inventory, @Positive Customer customer,
-			Date returnDate, @Positive Staff staff) {
+	public Rental(int rentalId, @NotBlank Date rentalDate, Date returnDate, Inventory inventory, Customer customer,
+		Staff staff) {
 		this();
 		this.rentalId = rentalId;
 		this.rentalDate = rentalDate;
+		this.returnDate = returnDate;
 		this.inventory = inventory;
 		this.customer = customer;
-		this.returnDate = returnDate;
 		this.staff = staff;
 	}
 
