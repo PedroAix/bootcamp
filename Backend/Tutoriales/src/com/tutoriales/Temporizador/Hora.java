@@ -1,5 +1,6 @@
 package com.tutoriales.Temporizador;
 
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Date;
@@ -14,7 +15,7 @@ public class Hora implements ActionListener {
 		Date ahora = new Date();
 		System.out.println(ahora.toString().substring(11,20));
 		
-		
+		Toolkit.getDefaultToolkit().beep();
 	}
 
 }
