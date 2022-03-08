@@ -1,5 +1,7 @@
 package com.tutoriales.Frames;
 
+import java.awt.Frame;
+
 import javax.swing.*;
 
 public class creandoMarcos {
@@ -20,7 +22,11 @@ class miMarco extends JFrame {
 
 	public miMarco() {
 
-		setSize(500, 300);
+		setBounds(400,250,200,200); //Los dos primeros parámetros indican la posición (x e y) y los dos últimos el tamaño del frame
+		setResizable(false);//Permitir o impedir que el frame se pueda redimensionar ni maximizar
+		setExtendedState(Frame.MAXIMIZED_BOTH);//Pantalla completa
+		setTitle("Ventana de prueba");
+		
 		setVisible(true);//mostramos el frame
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//indicamos que se salga al cerrar (sin esto el programa continuará ejecutandose y consumiendo recursos
 		
