@@ -84,12 +84,6 @@ body {
 }
 
 
-/*BARRA DEL BUSCADOR ABAJO*/
-.header-form {
-  
-}
-
-
 /*ATRIBUTOS PARA EL BUSCADOR*/
 .header-form > input {
   background-color: var(--color-light-content);
