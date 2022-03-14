@@ -1,0 +1,147 @@
+:root {
+  --color-light-base: #d8ac80;
+
+  --color-light-content: #2d2d2d;
+
+  --color-light-interaction: #c45b31;
+
+  --color-dark-base: #2d2d2d;
+
+  --color-dark-content: #d8ac80;
+
+  --color-dark-interaction: #c45b31;
+
+  --tamaño-base: 1em;
+}
+
+body {
+  background-color: var(--color-light-base);
+}
+
+
+/*GRID PARA EL HEADER*/
+.grid-container-header {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  border-bottom: 1px solid black;
+  gap: 15px;
+}
+.grid-item-header {
+  background-color: var(--color-light-base);
+  
+  text-align: center;
+}
+
+
+/*GRID PARA EL MENÚ*/
+.grid-container-nav {
+    display: grid;
+    grid-template-columns: auto;
+    gap: 45px;
+    padding-top: calc(var(--tamaño-base)*2);
+    padding-bottom: calc(var(--tamaño-base)*5);
+  }
+  .grid-item-nav {
+    background-color: var(--color-light-interaction);
+    padding: 5px 0px 5px 75px;
+    text-align: left;
+    color:black;
+    font-size: calc(var(--tamaño-base)*1.2);
+  }
+  
+/*GRID PARA EL FOOTER*/
+  .grid-container-footer {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    border-top: 1px solid black;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    gap: 15px;
+  }
+  .grid-item-footer {
+    
+    padding: 5px;
+    text-align: center;
+  }
+
+
+/*ATRIBUTOS GENERALES PARA TODAS LAS IMÁGENES*/
+.img-responsive {
+  width: 100%;
+  height: auto;
+}
+
+/*ATRIBUTOS PARA EL LOGO*/
+.img-logo {
+    max-width: 100px;
+}
+
+/*ATRIBUTOS PARA LA FOTO DE PERFIL*/
+.img-profile {
+  border-radius: 100%;
+  border: 2px solid var(--color-light-interaction);
+  max-width: 100px;
+}
+
+
+/*BARRA DEL BUSCADOR ABAJO*/
+.header-form {
+  
+}
+
+
+/*ATRIBUTOS PARA EL BUSCADOR*/
+.header-form > input {
+  background-color: var(--color-light-content);
+  border-radius: 20px;
+  border: none;
+  padding: calc(var(--tamaño-base) * 0.5) 20px calc(var(--tamaño-base) * 0.5) calc(var(--tamaño-base) * 2.2);
+  color: var(--color-light-base);
+}
+
+input:focus {
+  outline: none;
+}
+
+
+/*ICONO DEL FORMULARIO*/
+.bi-header {
+  position: absolute;
+  color: var(--color-light-base);
+  padding: 6px 0px 0px 5px;
+}
+
+
+/*COLOR PARA LOS ICONOS DEL FOOTER*/
+.bi-footer{
+    color: var(--color-light-content);
+}
+
+
+/*SEPARACION ENTRE MAIN Y HEADER*/
+main {
+  margin-top: calc(var(--tamaño-base) * 0.4);
+}
+
+
+/*ATRIBUTOS PARA EL MENU*/
+menu {
+  position: relative;
+  top: calc(var(--tamaño-base)*-7);
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  background-color: var(--color-light-base);
+  padding-inline-start: 0px;
+
+}
+
+
+/*LINKS DEL MENU*/
+nav > a {
+    
+    border-radius: 60px;
+    
+    margin-left: calc(var(--tamaño-base)*4);
+    margin-right: calc(var(--tamaño-base)*4);
+    text-decoration: none;
+}

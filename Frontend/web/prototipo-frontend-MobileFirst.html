@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="theme/style.css" />
+
+    <title>Ejemplo FrontEnd</title>
+  </head>
+  <body>
+    <header class="grid-container-header">
+      <logo class="grid-item-header">
+        <img
+          src="images/logo.png"
+          alt="Logotipo pizzeria"
+          class="img-responsive img-logo"
+        />
+      </logo>
+
+      <form class="grid-item-header header-form" action="#" , method="post">
+        <label for="search"></label>
+        <i class="bi-header bi-search"></i>
+        <input
+          type="text"
+          id="search"
+          name="buscador"
+          placeholder="Hoy me apetece..."
+        />
+        <input type="submit" hidden />
+      </form>
+      <profile class="grid-item-header">
+        <img
+          src="images/user.png"
+          alt="Foto de perfil"
+          class="img-responsive img-profile"
+        />
+      </profile>
+    </header>
+
+    <main>
+      <img src="images/pizza.jpg" alt="Fondo Pizza" class="img-responsive" />
+      <menu>
+        <nav class="grid-container-nav">
+          <a class="grid-item-nav" href="#">Consultar la carta</a>
+          <a class="grid-item-nav" href="#">Pedidos</a>
+          <a class="grid-item-nav" href="#">Mi perfil</a>
+        </nav>
+      </menu>
+    </main>
+    <footer class="grid-container-footer">
+      <a class="grid-item-footer" href="#"><i class="bi-footer bi-house-door"></i></a>
+      <a class="grid-item-footer" href="#"><i class="bi-footer bi-heart"></i></a>
+      <a class="grid-item-footer" href="#"><i class="bi-footer bi-cart3"></i></a>
+      <a class="grid-item-footer" href="#"><i class="bi-footer bi-search"></i></a>
+      <a class="grid-item-footer" href="#"><i class="bi-footer bi-person"></i></a>
+    </footer>
+  </body>
+</html>
