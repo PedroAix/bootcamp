@@ -1,4 +1,4 @@
-package com.tutoriales;
+package com.tutoriales.Empleado;
 
 public class Empleado_Static {
 
