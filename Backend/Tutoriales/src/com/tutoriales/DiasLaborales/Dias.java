@@ -1,4 +1,4 @@
-package com.tutoriales;
+package com.tutoriales.DiasLaborales;
 
 public class Dias {
 

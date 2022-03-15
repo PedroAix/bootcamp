@@ -1,4 +1,4 @@
-package com.tutoriales;
+package com.tutoriales.DiasLaborales;
 
 public enum DiasLaborales {
 	LUNES(1), MARTES(2), MIERCOLES(3), JUEVES(4), VIERNES(5);
