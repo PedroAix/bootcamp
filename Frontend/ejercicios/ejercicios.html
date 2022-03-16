@@ -1,20 +1,48 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ejercicios</title>
-</head>
-<body>
+  </head>
+  <body>
+    <h1>Ejercicios</h1>
     <script src="./ejercicios.js"></script>
     <script>
-        // console.log(Ejercicio1(1,3));
-        // console.log(Ejercicio2());
-        // console.log(Ejercicio3(20,1));
-        // console.log(Ejercicio4(100));
-        // console.log(Ejercicio5("12345678Z"));
-        // console.log(Ejercicio6("¿Acaso hubo búhos acá?"));
+      // console.log(Ejercicio1(1,3));
+      // console.log(Ejercicio2());
+      // console.log(Ejercicio3(20,1));
+      // console.log(Ejercicio4(100));
+      // console.log(Ejercicio5("12345678Z"));
+      // console.log(Ejercicio6("¿Acaso hubo búhos acá?"));
+
+
+
+
+
+
+
+      //EJERCICIO 7 y 8: FUNCIÓN CONSTRUCTORA/CLASE
+      //let juego = new Ejercicio7();
+      let juego = new JuegoConClase();
+
+      for (this.intentos = 1; this.intentos <= 10; this.intentos++) {
+        while (true) {
+          var numeroIntroducido = parseInt(
+            prompt(
+              "Dame tu número del 1 al 100 (" +
+                (juego.getJugada() + 1) +
+                " de 10): "
+            )
+          );
+          if (Number.isInteger(numeroIntroducido)) 
+            break;
+        }
+        juego.jugada(numeroIntroducido);
+        alert(juego.getResultado());
+        if (juego.getFinalizado()) break;
+      }
     </script>
-</body>
+  </body>
 </html>

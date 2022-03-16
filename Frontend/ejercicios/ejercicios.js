@@ -102,6 +102,90 @@ function Ejercicio5(nif) {
 
 /*Ejercicio6*/
 function Ejercicio6(cadena) {
-  cadena = cadena.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,"").match(/[a-z]/g).join("");
+  cadena = cadena
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .match(/[a-z]/g)
+    .join("");
   return cadena === cadena.split("").reverse().join("");
+}
+
+/*Ejercicio7*/
+function Ejercicio7() {
+  this.inicializar = function () {
+    this.numeroBuscado = Ejercicio1(0, 100);
+    this.intentos = 0;
+    this.encontrado = false;
+  };
+
+  this.inicializar();
+
+  this.jugada = function (numeroIntroducido) {
+    this.intentos += 1;
+    if (this.numeroBuscado == numeroIntroducido) {
+      this.encontrado = true;
+      this.resultado = "Bieeen!!! Acertaste.";
+    } else if (this.intentos >= 10) {
+      this.resultado =
+        "Upsss! Se acabaron los intentos, el número era el " +
+        this.numeroBuscado;
+    } else if (this.numeroBuscado > numeroIntroducido) {
+      this.resultado = "Mi número es mayor.";
+    } else {
+      this.resultado = "Mi número es menor.";
+    }
+  };
+
+  this.getResultado = function () {
+    return this.resultado;
+  };
+
+  this.getFinalizado = function () {
+    return this.intentos >= 10 || this.encontrado;
+  };
+
+  this.getJugada = function () {
+    return this.intentos;
+  };
+}
+
+/*Ejercicio8*/
+class JuegoConClase {
+  constructor() {
+    this.inicializar();
+  }
+
+  inicializar() {
+    this.numeroBuscado = Ejercicio1(0, 100);
+    this.intentos = 0;
+    this.encontrado = false;
+  }
+
+  jugada(numeroIntroducido) {
+    this.intentos += 1;
+    if (this.numeroBuscado == numeroIntroducido) {
+      this.encontrado = true;
+      this.resultado = "Bieeen!!! Acertaste.";
+    } else if (this.intentos >= 10) {
+      this.resultado =
+        "Upsss! Se acabaron los intentos, el número era el " +
+        this.numeroBuscado;
+    } else if (this.numeroBuscado > numeroIntroducido) {
+      this.resultado = "Mi número es mayor.";
+    } else {
+      this.resultado = "Mi número es menor.";
+    }
+  }
+  getResultado() {
+    return this.resultado;
+  }
+
+  getFinalizado() {
+    return this.intentos >= 10 || this.encontrado;
+  }
+
+  getJugada() {
+    return this.intentos;
+  }
 }
