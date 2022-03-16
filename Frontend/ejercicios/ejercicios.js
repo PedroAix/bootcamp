@@ -24,9 +24,8 @@ function Ejercicio2() {
         )
       );
 
-      if (Number.isInteger(numeroIntroducido)) {
+      if (Number.isInteger(numeroIntroducido)) 
         break;
-      }
     }
 
     if (numeroAleatorio == numeroIntroducido) {
