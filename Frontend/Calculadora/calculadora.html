@@ -14,6 +14,9 @@
   </head>
   <body>
     <main>
+      <h2>
+        <output class="historial"></output>
+      </h2>
       <h1>
         <output class="pantalla">0</output>
       </h1>
@@ -50,36 +53,43 @@
     </main>
     <script src="calculadora.js"></script>
     <script>
-      let calculadora = new Calculadora(document.querySelector(".pantalla"));
-        let operando = 0;
+      let calculadora = new Calculadora(document.querySelector(".pantalla"),document.querySelector(".historial"));
+
       document.querySelectorAll(".numerico").forEach((btn) => {
         btn.addEventListener("click", (ev) => {
-          calculadora.ponDigito(ev.target.textContent)
-          operando = btn.textContent;
-        }
-        );
+          calculadora.ponDigito(ev.target.textContent);
+        });
       });
 
       document.querySelectorAll(".operador").forEach((btn) => {
-        btn.addEventListener("click", (ev) =>{
-          calculadora.ponDigito(ev.target.textContent)
+        btn.addEventListener("click", (ev) => {
+          operando = parseFloat(
+            document.querySelector(".pantalla").textContent
+          );
+          console.log("Operando: " + operando);
+
           operador = btn.textContent;
+          calculadora.limpiarPantalla();
           
-          calculadora.calcula(operando,operador)
-        
-    }
-        );
+          calculadora.calcula(operando, operador);
+          calculadora.ponHistorial();
+          
+          calculadora.ponDigito(operando)
+          
+        });
       });
 
-      document.querySelector(".retroceder").addEventListener("click", () =>
-      calculadora.borraDigito());
+      document
+        .querySelector(".retroceder")
+        .addEventListener("click", () => calculadora.borraDigito());
 
-      document.querySelector(".limpiar").addEventListener("click", () =>
-      calculadora.limpiarPantalla());
+      document
+        .querySelector(".limpiar")
+        .addEventListener("click", () => calculadora.limpiarPantalla());
 
-      document.querySelector(".decimal").addEventListener("click", () =>
-      calculadora.ponDecimal());
-
+      document
+        .querySelector(".decimal")
+        .addEventListener("click", () => calculadora.ponDecimal());
     </script>
   </body>
 </html>
