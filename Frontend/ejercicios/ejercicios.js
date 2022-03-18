@@ -6,6 +6,9 @@ function Ejercicio0() {
 
 /*Ejercicio1*/
 function Ejercicio1(min, max) {
+  if (!min || !Number.isInteger(min)) throw new Error("Falta el valor minimo")
+  if (!max || !Number.isInteger(max)) throw new Error("Falta el valor maximo")
+  if (min >= max) throw new Error("El valor minimo debe ser mayor o igual al maximo")
   return Math.floor(Math.random() * max + min);
 }
 
