@@ -29,6 +29,10 @@ h1 {
     text-align: right;
 }
 
+.pantalla{
+    overflow: hidden;
+}
+
 button {
     border: none;
     color: var(--color-font-tecla);

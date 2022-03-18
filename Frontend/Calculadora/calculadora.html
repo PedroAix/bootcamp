@@ -18,7 +18,7 @@
         <output class="pantalla">0</output>
       </h1>
       <teclado class="grid-container">
-        <button>C</button>
+        <button class="limpiar">C</button>
         <button>-</button>
         <button>-</button>
         <button class="operador">/</button>
@@ -43,7 +43,7 @@
       </teclado>
       <teclado class="grid-container">
         <button class="numerico">0</button>
-        <button>,</button>
+        <button class="decimal">,</button>
         <button class="retroceder"><i class="bi bi-backspace"></i></button>
         <button class="igual">=</button>
       </teclado>
@@ -51,15 +51,35 @@
     <script src="calculadora.js"></script>
     <script>
       let calculadora = new Calculadora(document.querySelector(".pantalla"));
-
+        let operando = 0;
       document.querySelectorAll(".numerico").forEach((btn) => {
-        btn.addEventListener("click", (ev) =>
+        btn.addEventListener("click", (ev) => {
           calculadora.ponDigito(ev.target.textContent)
+          operando = btn.textContent;
+        }
+        );
+      });
+
+      document.querySelectorAll(".operador").forEach((btn) => {
+        btn.addEventListener("click", (ev) =>{
+          calculadora.ponDigito(ev.target.textContent)
+          operador = btn.textContent;
+          
+          calculadora.calcula(operando,operador)
+        
+    }
         );
       });
 
       document.querySelector(".retroceder").addEventListener("click", () =>
       calculadora.borraDigito());
+
+      document.querySelector(".limpiar").addEventListener("click", () =>
+      calculadora.limpiarPantalla());
+
+      document.querySelector(".decimal").addEventListener("click", () =>
+      calculadora.ponDecimal());
+
     </script>
   </body>
 </html>
