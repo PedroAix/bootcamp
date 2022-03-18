@@ -1,0 +1,66 @@
+:root{
+    --tamaño-base: 1em;
+    --color-background-tecla:rgb(45, 45, 45);
+    --color-background-tecla-hover: rgb(37, 37, 37);
+    --color-background-tecla-igual: rgb(253, 173, 0);
+    --color-background-tecla-operador: rgb(25, 25, 25);
+    --color-background-tecla-igual-hover: rgb(199, 136, 0);
+    --color-font-tecla: rgb(145, 145, 145);
+    --color-font-tecla-igual: rgb(255, 255, 255);
+    
+}
+
+body {
+    color: white;
+    background-color: rgb(12, 12, 12);
+    max-width: 500px;
+    margin: auto;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 3px;
+    padding: 3px;
+}
+  
+
+h1 {
+    text-align: right;
+}
+
+button {
+    border: none;
+    color: var(--color-font-tecla);
+    background-color:var(--color-background-tecla);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.igual {
+    
+    background-color: var(--color-background-tecla-igual);
+    color: var(--color-font-tecla-igual);
+}
+
+.operador {
+    background-color: var(--color-background-tecla-operador);
+}
+
+.igual:hover {
+    background-color: var(--color-background-tecla-igual-hover);
+}
+
+button:hover {
+    background-color: var(--color-background-tecla-hover);
+}
+
+
+
+
+

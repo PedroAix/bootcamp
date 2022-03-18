@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="images/calculator.ico" />
+    <link rel="stylesheet" href="theme/calculadora.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"
+    />
+    <title>Calculadora</title>
+  </head>
+  <body>
+    <main>
+      <h1>
+        <output class="pantalla">0</output>
+      </h1>
+      <teclado class="grid-container">
+        <button>C</button>
+        <button>-</button>
+        <button>-</button>
+        <button class="operador">/</button>
+      </teclado>
+      <teclado class="grid-container">
+        <button class="numerico">7</button>
+        <button class="numerico">8</button>
+        <button class="numerico">9</button>
+        <button class="operador">x</button>
+      </teclado>
+      <teclado class="grid-container">
+        <button class="numerico">4</button>
+        <button class="numerico">5</button>
+        <button class="numerico">6</button>
+        <button class="operador">-</button>
+      </teclado>
+      <teclado class="grid-container">
+        <button class="numerico">1</button>
+        <button class="numerico">2</button>
+        <button class="numerico">3</button>
+        <button class="operador">+</button>
+      </teclado>
+      <teclado class="grid-container">
+        <button class="numerico">0</button>
+        <button>,</button>
+        <button class="retroceder"><i class="bi bi-backspace"></i></button>
+        <button class="igual">=</button>
+      </teclado>
+    </main>
+    <script src="calculadora.js"></script>
+    <script>
+      let calculadora = new Calculadora(document.querySelector(".pantalla"));
+
+      document.querySelectorAll(".numerico").forEach((btn) => {
+        btn.addEventListener("click", (ev) =>
+          calculadora.ponDigito(ev.target.textContent)
+        );
+      });
+
+      document.querySelector(".retroceder").addEventListener("click", () =>
+      calculadora.borraDigito());
+    </script>
+  </body>
+</html>
