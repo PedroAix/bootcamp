@@ -21,7 +21,7 @@
         <output class="pantalla">0</output>
       </h1>
       <teclado class="grid-container">
-        <button class="limpiar">C</button>
+        <button class="reiniciar">C</button>
         <button>-</button>
         <button>-</button>
         <button class="operador">/</button>
@@ -46,7 +46,7 @@
       </teclado>
       <teclado class="grid-container">
         <button class="numerico">0</button>
-        <button class="decimal">,</button>
+        <button class="decimal">.</button>
         <button class="retroceder"><i class="bi bi-backspace"></i></button>
         <button class="igual">=</button>
       </teclado>
@@ -54,42 +54,44 @@
     <script src="calculadora.js"></script>
     <script>
       let calculadora = new Calculadora(document.querySelector(".pantalla"),document.querySelector(".historial"));
-
       document.querySelectorAll(".numerico").forEach((btn) => {
         btn.addEventListener("click", (ev) => {
-          calculadora.ponDigito(ev.target.textContent);
+          
+            calculadora.sustituirOperando();
+            calculadora.ponerDigito(ev.target.textContent);
         });
       });
 
       document.querySelectorAll(".operador").forEach((btn) => {
         btn.addEventListener("click", (ev) => {
+            calculadora.sustituir = true;
           operando = parseFloat(
             document.querySelector(".pantalla").textContent
           );
           console.log("Operando: " + operando);
+          
 
           operador = btn.textContent;
-          calculadora.limpiarPantalla();
+          console.log("Operador: " + operador);
+
           
-          calculadora.calcula(operando, operador);
-          calculadora.ponHistorial();
-          
-          calculadora.ponDigito(operando)
-          
+          document.querySelector(".pantalla").textContent = calculadora.calcula(operando, operador);
+          calculadora.ponerHistorial();
+        //   document.querySelector(".pantalla").textContent="0"
         });
       });
 
       document
         .querySelector(".retroceder")
-        .addEventListener("click", () => calculadora.borraDigito());
+        .addEventListener("click", () => calculadora.borrarDigito());
 
       document
-        .querySelector(".limpiar")
-        .addEventListener("click", () => calculadora.limpiarPantalla());
+        .querySelector(".reiniciar")
+        .addEventListener("click", () => calculadora.reiniciarCalculadora());
 
       document
         .querySelector(".decimal")
-        .addEventListener("click", () => calculadora.ponDecimal());
+        .addEventListener("click", () => calculadora.ponerDecimal());
     </script>
   </body>
 </html>

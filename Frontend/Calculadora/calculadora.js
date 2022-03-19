@@ -1,18 +1,17 @@
-
-
 class Calculadora {
-  
-    constructor(pantalla, historial) {
+  constructor(pantalla, historial) {
     this.pantalla = pantalla;
     this.historial = historial;
-    this.total = 0;
-    this.operadorPendiente = "+";
+    this.inicializar();
   }
 
-  
+  inicializar() {
+    this.total = 0;
+    this.operadorPendiente = "+";
+    this.sustituir = false;
+  }
 
-
-  ponDigito(digito) {
+  ponerDigito(digito) {
     //CONSEGUIR QUE LOS NÚMEROS NO SE SALGAN DE LA PANTALLA
     if (this.pantalla.textContent == "0") {
       this.pantalla.textContent = digito;
@@ -21,11 +20,14 @@ class Calculadora {
     }
   }
 
-  ponDecimal() {
-    this.pantalla.textContent += ",";
+  ponerDecimal() {
+    if (!this.pantalla.textContent.match(/\d+\.\d*/)) {
+      this.pantalla.textContent += ".";
+    }
   }
 
-  borraDigito() {
+  borrarDigito() {
+    if (!this.sustituir){
     let longitud = this.pantalla.textContent.length;
 
     if (longitud <= 1) {
@@ -35,27 +37,38 @@ class Calculadora {
         0,
         longitud - 1
       );
-    }
+    }}
   }
 
-  limpiarPantalla() {
+  borrarPantalla() {
     this.pantalla.textContent = "0";
   }
 
-  ponHistorial() {
-      this.historial.textContent = this.total + " " + this.operadorPendiente;
+  sustituirOperando() {
+      if(this.sustituir){
+        this.borrarPantalla(); 
+        this.sustituir = false;
+      }
+  }
+
+  reiniciarCalculadora() {
+    this.inicializar();
+    this.historial.textContent = "";
+    this.pantalla.textContent = "0";
+  }
+
+  ponerHistorial() {
+    this.historial.textContent = this.total + " " + this.operadorPendiente;
   }
 
   getTotal() {
     console.log("total: " + this.total);
     return this.total;
-    
   }
 
   calcula(operando2, nuevoOperador) {
     this.operando = operando2;
-    this.operadorPendiente = nuevoOperador
-    console.log(operando2 + " " + nuevoOperador)
+    console.log(operando2 + " " + nuevoOperador);
 
     switch (this.operadorPendiente) {
       case "+":
@@ -65,13 +78,13 @@ class Calculadora {
         this.total -= operando2;
         break;
       case "x":
-        this.total *= operando2
+        this.total *= operando2;
         break;
       case "/":
-        this.total /= operando2
+        this.total /= operando2;
         break;
       case "%":
-        this.total %= operando2
+        this.total %= operando2;
         break;
       case "=":
         break;
