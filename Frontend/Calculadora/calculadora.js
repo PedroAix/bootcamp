@@ -20,35 +20,36 @@ class Calculadora {
     }
   }
 
+  ponerHistorial() {
+    this.historial.textContent = this.getTotal() + " " + this.operadorPendiente;
+  }
+
   ponerDecimal() {
-    if (!this.pantalla.textContent.match(/\d+\.\d*/)) {
-      this.pantalla.textContent += ".";
+    if (this.sustituir) {
+      this.borrarPantalla();
+      this.sustituir = false;
+    } else {
+      if (this.pantalla.textContent.match(/\d+\.\d*/))
+        throw Error("Ya existe un valor decimal");
+    }
+    this.pantalla.textContent += ".";
+  }
+
+  cambiarSigno() {
+    if (this.pantalla.textContent == "0")
+      throw Error("No se puede cambiar de signo al 0");
+    if (this.pantalla.textContent.match(/^-/)) {
+      this.pantalla.textContent = this.pantalla.textContent.replace(/^-/, "");
+    } else {
+      this.pantalla.textContent = "-" + this.pantalla.textContent;
     }
   }
 
-  borrarDigito() {
-    if (!this.sustituir){
-    let longitud = this.pantalla.textContent.length;
-
-    if (longitud <= 1) {
-      this.pantalla.textContent = "0";
-    } else {
-      this.pantalla.textContent = this.pantalla.textContent.substr(
-        0,
-        longitud - 1
-      );
-    }}
-  }
-
-  borrarPantalla() {
-    this.pantalla.textContent = "0";
-  }
-
   sustituirOperando() {
-      if(this.sustituir){
-        this.borrarPantalla(); 
-        this.sustituir = false;
-      }
+    if (this.sustituir) {
+      this.borrarPantalla();
+      this.sustituir = false;
+    }
   }
 
   reiniciarCalculadora() {
@@ -57,18 +58,31 @@ class Calculadora {
     this.pantalla.textContent = "0";
   }
 
-  ponerHistorial() {
-    this.historial.textContent = this.total + " " + this.operadorPendiente;
+  borrarDigito() {
+    if (!this.sustituir) {
+      let longitud = this.pantalla.textContent.length;
+      if (longitud <= 1) {
+        this.pantalla.textContent = "0";
+      } else {
+        this.pantalla.textContent = this.pantalla.textContent.substr(
+          0,
+          longitud - 1
+        );
+      }
+    }
+  }
+
+  borrarPantalla() {
+    this.pantalla.textContent = "0";
   }
 
   getTotal() {
-    console.log("total: " + this.total);
     return this.total;
   }
 
   calcula(operando2, nuevoOperador) {
     this.operando = operando2;
-    console.log(operando2 + " " + nuevoOperador);
+    //console.log(operando2 + " " + nuevoOperador);
 
     switch (this.operadorPendiente) {
       case "+":

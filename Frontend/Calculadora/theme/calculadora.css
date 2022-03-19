@@ -25,8 +25,9 @@ body {
 }
   
 
-h1, h2 {
+h1, h3 {
     text-align: right;
+    margin: calc(var(--tamaño-base)* 0.5);
 }
 
 .pantalla{

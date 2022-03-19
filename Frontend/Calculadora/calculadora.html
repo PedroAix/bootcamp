@@ -14,16 +14,16 @@
   </head>
   <body>
     <main>
-      <h2>
+      <h3>
         <output class="historial"></output>
-      </h2>
+      </h3>
       <h1>
         <output class="pantalla">0</output>
       </h1>
       <teclado class="grid-container">
         <button class="reiniciar">C</button>
         <button>-</button>
-        <button>-</button>
+        <button class="signo"><i class="bi bi-plus-slash-minus"></i></button>
         <button class="operador">/</button>
       </teclado>
       <teclado class="grid-container">
@@ -46,38 +46,41 @@
       </teclado>
       <teclado class="grid-container">
         <button class="numerico">0</button>
-        <button class="decimal">.</button>
+        <button class="decimal">,</button>
         <button class="retroceder"><i class="bi bi-backspace"></i></button>
         <button class="igual">=</button>
       </teclado>
     </main>
     <script src="calculadora.js"></script>
     <script>
-      let calculadora = new Calculadora(document.querySelector(".pantalla"),document.querySelector(".historial"));
+      let calculadora = new Calculadora(
+        document.querySelector(".pantalla"),
+        document.querySelector(".historial")
+      );
       document.querySelectorAll(".numerico").forEach((btn) => {
         btn.addEventListener("click", (ev) => {
-          
-            calculadora.sustituirOperando();
-            calculadora.ponerDigito(ev.target.textContent);
+          calculadora.sustituirOperando();
+          calculadora.ponerDigito(ev.target.textContent);
         });
       });
 
       document.querySelectorAll(".operador").forEach((btn) => {
         btn.addEventListener("click", (ev) => {
-            calculadora.sustituir = true;
+          calculadora.sustituir = true;
           operando = parseFloat(
             document.querySelector(".pantalla").textContent
           );
           console.log("Operando: " + operando);
-          
 
           operador = btn.textContent;
           console.log("Operador: " + operador);
 
-          
-          document.querySelector(".pantalla").textContent = calculadora.calcula(operando, operador);
+          calculadora.calcula(operando, operador);
+
+          document.querySelector(".pantalla").textContent =
+            calculadora.getTotal();
+
           calculadora.ponerHistorial();
-        //   document.querySelector(".pantalla").textContent="0"
         });
       });
 
@@ -92,6 +95,10 @@
       document
         .querySelector(".decimal")
         .addEventListener("click", () => calculadora.ponerDecimal());
+
+      document
+        .querySelector(".signo")
+        .addEventListener("click", () => calculadora.cambiarSigno());
     </script>
   </body>
 </html>
