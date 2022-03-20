@@ -53,17 +53,24 @@ function Ejercicio2() {
 
 /*Ejercicio3*/
 function Ejercicio3(elementos, valor) {
+  if(!elementos || !Number.isInteger(elementos)) throw new Error("Falta el parámetro elementos");
+  if(!valor || !Number.isInteger(valor)) throw new Error("Falta el parámetro valor");
+
   let array = [];
 
   for (let i = 0; i < elementos; i++) {
     array[i] = valor;
   }
 
+  console.log(array)
   return array;
 }
 
 /*Ejercicio4*/
 function Ejercicio4(cantidad) {
+  if(!cantidad || !Number.isInteger(cantidad)) throw new Error("Falta el parámetro");
+  
+
   let cont = 0;
   let numero = 2;
   let numeroPrimo = [];
