@@ -18,11 +18,10 @@
         <output class="historial"></output>
       </h3>
       <h1>
-        <output class="pantalla">0</output>
+        <output> <div class="pantalla">0</div></output>
       </h1>
       <teclado class="grid-container">
         <button class="reiniciar">C</button>
-        <button>-</button>
         <button class="signo"><i class="bi bi-plus-slash-minus"></i></button>
         <button class="operador">/</button>
       </teclado>
@@ -59,6 +58,7 @@
       );
       document.querySelectorAll(".numerico").forEach((btn) => {
         btn.addEventListener("click", (ev) => {
+          if (calculadora.igual) calculadora.reiniciarCalculadora();
           calculadora.sustituirOperando();
           calculadora.ponerDigito(ev.target.textContent);
         });
@@ -66,21 +66,33 @@
 
       document.querySelectorAll(".operador").forEach((btn) => {
         btn.addEventListener("click", (ev) => {
-          calculadora.sustituir = true;
-          operando = parseFloat(
-            document.querySelector(".pantalla").textContent
-          );
-          console.log("Operando: " + operando);
+          if (!calculadora.igual) {
+            calculadora.sustituir = true;
+            operando = parseFloat(
+              document.querySelector(".pantalla").textContent
+            );
+            operador = ev.target.textContent;
+            calculadora.calcula(operando, operador);
+            document.querySelector(".pantalla").textContent =
+              calculadora.getAcumulado();
+            calculadora.ponerHistorial();
+          }
+        });
+      });
 
-          operador = btn.textContent;
-          console.log("Operador: " + operador);
-
-          calculadora.calcula(operando, operador);
-
-          document.querySelector(".pantalla").textContent =
-            calculadora.getTotal();
-
-          calculadora.ponerHistorial();
+      document.querySelectorAll(".igual").forEach((btn) => {
+        btn.addEventListener("click", (ev) => {
+          if (!calculadora.igual) {
+            calculadora.sustituir = true;
+            operando = parseFloat(
+              document.querySelector(".pantalla").textContent
+            );
+            document.querySelector(".historial").textContent = 
+            calculadora.ponerHistorialResultado(calculadora.getAcumulado(),operador,operando, ev.target.textContent);
+            document.querySelector(".pantalla").textContent =
+              calculadora.calcula(operando, operador);
+            calculadora.igual = true;
+          }
         });
       });
 
