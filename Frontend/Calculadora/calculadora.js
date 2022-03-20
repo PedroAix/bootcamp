@@ -25,8 +25,8 @@ class Calculadora {
       this.getAcumulado() + " " + this.operadorPendiente;
   }
 
-  ponerHistorialResultado(acumulado,operador,operando,igual) {
-    return acumulado + " " + operador + " " + operando + " " + igual;
+  ponerHistorialResultado(acumulado,operador,operando,signo) {
+    return acumulado + " " + operador + " " + operando + " " + signo;
   }
 
   ponerDecimal() {
