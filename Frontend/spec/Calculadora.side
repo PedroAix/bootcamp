@@ -1,0 +1,969 @@
+{
+  "id": "f29ee696-418a-4ba0-bd44-cf251659b802",
+  "version": "2.0",
+  "name": "Calculadora",
+  "url": "http://127.0.0.1:5500/Calculadora/calculadora.html",
+  "tests": [{
+    "id": "4c3fead3-fd30-4095-bf40-a5acfc79d08d",
+    "name": "Cambio de signo",
+    "commands": [{
+      "id": "16e564d0-c464-4c52-a5f6-0405a3330233",
+      "comment": "",
+      "command": "open",
+      "target": "/Calculadora/calculadora.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3f2c9180-10b9-4d94-9066-34fa50563e39",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "978x680",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "07e7d101-b9be-42cb-b84e-1cd203d8cfa5",
+      "comment": "",
+      "command": "click",
+      "target": "css=.grid-container:nth-child(6) > .numerico:nth-child(1)",
+      "targets": [
+        ["css=.grid-container:nth-child(6) > .numerico:nth-child(1)", "css:finder"],
+        ["xpath=//teclado[4]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'1')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "01a7fe9e-8ef7-4d4a-ba6a-f9147b83c0b0",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.pantalla",
+      "targets": [
+        ["css=.pantalla", "css:finder"],
+        ["xpath=//div", "xpath:position"],
+        ["xpath=//div[contains(.,'1')]", "xpath:innerText"]
+      ],
+      "value": "1"
+    }, {
+      "id": "57fc5074-9770-4ebc-a5b4-0f10faec57d1",
+      "comment": "",
+      "command": "click",
+      "target": "css=.signo",
+      "targets": [
+        ["css=.signo", "css:finder"],
+        ["xpath=//button[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c39b793a-590f-42eb-9b89-89322dbf97f5",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.pantalla",
+      "targets": [
+        ["css=.pantalla", "css:finder"],
+        ["xpath=//div", "xpath:position"],
+        ["xpath=//div[contains(.,'-1')]", "xpath:innerText"]
+      ],
+      "value": "-1"
+    }, {
+      "id": "8823c8cf-94f7-49e3-91ca-1a0bfa6dffa9",
+      "comment": "",
+      "command": "click",
+      "target": "css=.grid-container:nth-child(4) > .operador",
+      "targets": [
+        ["css=.grid-container:nth-child(4) > .operador", "css:finder"],
+        ["xpath=//button[4]", "xpath:position"],
+        ["xpath=//button[contains(.,'x')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "84b13ff9-9b8d-4b3e-aa85-d1be60b6eb06",
+      "comment": "",
+      "command": "click",
+      "target": "css=.grid-container:nth-child(6) > .numerico:nth-child(2)",
+      "targets": [
+        ["css=.grid-container:nth-child(6) > .numerico:nth-child(2)", "css:finder"],
+        ["xpath=//teclado[4]/button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'2')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a8ed2d0e-2708-4833-870a-5799c5d3ecba",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.historial",
+      "targets": [
+        ["css=.historial", "css:finder"],
+        ["xpath=//output", "xpath:position"],
+        ["xpath=//output[contains(.,'-1 x')]", "xpath:innerText"]
+      ],
+      "value": "-1 x"
+    }, {
+      "id": "ebc5d8b8-f20b-4512-87fc-8ee7a8678e2f",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.pantalla",
+      "targets": [
+        ["css=.pantalla", "css:finder"],
+        ["xpath=//div", "xpath:position"],
+        ["xpath=//div[contains(.,'2')]", "xpath:innerText"]
+      ],
+      "value": "2"
+    }, {
+      "id": "fd872189-6d7c-4e0c-a00f-77627770b61b",
+      "comment": "",
+      "command": "click",
+      "target": "css=.grid-container:nth-child(6) > .operador",
+      "targets": [
+        ["css=.grid-container:nth-child(6) > .operador", "css:finder"],
+        ["xpath=//teclado[4]/button[4]", "xpath:position"],
+        ["xpath=//button[contains(.,'+')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "63cd082d-0877-40ad-9af5-9bebaf49797d",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.pantalla",
+      "targets": [
+        ["css=.pantalla", "css:finder"],
+        ["xpath=//div", "xpath:position"],
+        ["xpath=//div[contains(.,'-2')]", "xpath:innerText"]
+      ],
+      "value": "-2"
+    }, {
+      "id": "dcaf189f-a8ca-4412-9f62-af53310d0c49",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.historial",
+      "targets": [
+        ["css=.historial", "css:finder"],
+        ["xpath=//output", "xpath:position"],
+        ["xpath=//output[contains(.,'-2 +')]", "xpath:innerText"]
+      ],
+      "value": "-2 +"
+    }, {
+      "id": "a6d73fb8-0d0c-471f-b753-4c14152bc1b7",
+      "comment": "",
+      "command": "click",
+      "target": "css=.signo",
+      "targets": [
+        ["css=.signo", "css:finder"],
+        ["xpath=//button[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "545f7a3e-4144-4f6c-a7fe-b8beb0da067e",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.pantalla",
+      "targets": [
+        ["css=.pantalla", "css:finder"],
+        ["xpath=//div", "xpath:position"],
+        ["xpath=//div[contains(.,'2')]", "xpath:innerText"]
+      ],
+      "value": "2"
+    }, {
+      "id": "1424f416-4d83-447d-a340-95c3285f46ce",
+      "comment": "",
+      "command": "click",
+      "target": "css=.igual",
+      "targets": [
+        ["css=.igual", "css:finder"],
+        ["xpath=//teclado[5]/button[4]", "xpath:position"],
+        ["xpath=//button[contains(.,'=')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "4cc74bfa-9a87-437e-9f5a-f3a9dbfc353f",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.pantalla",
+      "targets": [
+        ["css=.pantalla", "css:finder"],
+        ["xpath=//div", "xpath:position"],
+        ["xpath=//div[contains(.,'0')]", "xpath:innerText"]
+      ],
+      "value": "0"
+    }]
+  }, {
+    "id": "ef4c9014-89bf-4fe5-bf14-1c9317b2c7b8",
+    "name": "Operaciones",
+    "commands": [{
+      "id": "8fb90c6e-832f-4727-b8e6-1890267c7d04",
+      "comment": "",
+      "command": "open",
+      "target": "http://127.0.0.1:5500/Calculadora/calculadora.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e49779d2-4508-447d-8f9a-c8a543146a2f",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "978x680",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "84c6f457-2a58-43cd-9645-dc139fc72cae",
+      "comment": "",
+      "command": "click",
+      "target": "css=.grid-container:nth-child(6) > .numerico:nth-child(3)",
+      "targets": [
+        ["css=.grid-container:nth-child(6) > .numerico:nth-child(3)", "css:finder"],
+        ["xpath=//teclado[4]/button[3]", "xpath:position"],
+        ["xpath=//button[contains(.,'3')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "737f9812-5aff-4f4e-879c-7aeb1f2f4ed8",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.pantalla",
+      "targets": [
+        ["css=.pantalla", "css:finder"],
+        ["xpath=//div", "xpath:position"],
+        ["xpath=//div[contains(.,'3')]", "xpath:innerText"]
+      ],
+      "value": "3"
+    }, {
+      "id": "79212971-4b84-4d47-a637-fa4b3ea837f4",
+      "comment": "",
+      "command": "click",
+      "target": "css=.grid-container:nth-child(6) > .operador",
+      "targets": [
+        ["css=.grid-container:nth-child(6) > .operador", "css:finder"],
+        ["xpath=//teclado[4]/button[4]", "xpath:position"],
+        ["xpath=//button[contains(.,'+')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ec2819be-7f2d-4802-b0e4-a289641849f1",
+      "comment": "",
+      "command": "click",
+      "target": "css=.grid-container:nth-child(4) > .numerico:nth-child(3)",
+      "targets": [
+        ["css=.grid-container:nth-child(4) > .numerico:nth-child(3)", "css:finder"],
+        ["xpath=//teclado[2]/button[3]", "xpath:position"],
+        ["xpath=//button[contains(.,'9')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9df8c291-b331-4fc0-95de-5d3c92eea94a",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.pantalla",
+      "targets": [
+        ["css=.pantalla", "css:finder"],
+        ["xpath=//div", "xpath:position"],
+        ["xpath=//div[contains(.,'9')]", "xpath:innerText"]
+      ],
+      "value": "9"
+    }, {
+      "id": "76b15cfd-5a15-45be-87b8-14e4ce015742",
+      "comment": "",
+      "command": "click",
+      "target": "css=.bi-plus-slash-minus",
+      "targets": [
+        ["css=.bi-plus-slash-minus", "css:finder"],
+        ["xpath=//i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "024c014c-5353-4b9f-88d6-49cb6f6cd627",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.pantalla",
+      "targets": [
+        ["css=.pantalla", "css:finder"],
+        ["xpath=//div", "xpath:position"],
+        ["xpath=//div[contains(.,'-9')]", "xpath:innerText"]
+      ],
+      "value": "-9"
+    }, {
+      "id": "6c81ea4c-eee3-4f34-ac1a-c5db17468560",
+      "comment": "",
+      "command": "click",
+      "target": "css=.grid-container:nth-child(4) > .operador",
+      "targets": [
+        ["css=.grid-container:nth-child(4) > .operador", "css:finder"],
+        ["xpath=//button[4]", "xpath:position"],
+        ["xpath=//button[contains(.,'x')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f7d336b0-f228-4dc8-bae1-660593968cb3",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.historial",
+      "targets": [
+        ["css=.historial", "css:finder"],
+        ["xpath=//output", "xpath:position"],
+        ["xpath=//output[contains(.,'-6 x')]", "xpath:innerText"]
+      ],
+      "value": "-6 x"
+    }, {
+      "id": "2d1a3cde-a30e-4081-8ba1-d1e300658556",
+      "comment": "",
+      "command": "click",
+      "target": "css=.grid-container:nth-child(6) > .numerico:nth-child(1)",
+      "targets": [
+        ["css=.grid-container:nth-child(6) > .numerico:nth-child(1)", "css:finder"],
+        ["xpath=//teclado[4]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'1')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "156e040f-cece-4b84-b458-dffeea470782",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.pantalla",
+      "targets": [
+        ["css=.pantalla", "css:finder"],
+        ["xpath=//div", "xpath:position"],
+        ["xpath=//div[contains(.,'1')]", "xpath:innerText"]
+      ],
+      "value": "1"
+    }, {
+      "id": "950f211a-95d8-44ee-8fb5-eeecb64ad287",
+      "comment": "",
+      "command": "click",
+      "target": "css=.grid-container:nth-child(5) > .operador",
+      "targets": [
+        ["css=.grid-container:nth-child(5) > .operador", "css:finder"],
+        ["xpath=//teclado[3]/button[4]", "xpath:position"],
+        ["xpath=//button[contains(.,'-')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5217ebd1-24eb-4f6d-90a4-7073ef8f7cf1",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.historial",
+      "targets": [
+        ["css=.historial", "css:finder"],
+        ["xpath=//output", "xpath:position"],
+        ["xpath=//output[contains(.,'-6 -')]", "xpath:innerText"]
+      ],
+      "value": "-6 -"
+    }, {
+      "id": "d8cab2e9-f5ce-4f16-93ee-ae121e8a0071",
+      "comment": "",
+      "command": "click",
+      "target": "css=.grid-container:nth-child(6) > .numerico:nth-child(1)",
+      "targets": [
+        ["css=.grid-container:nth-child(6) > .numerico:nth-child(1)", "css:finder"],
+        ["xpath=//teclado[4]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'1')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6619c979-5797-4444-95e2-af36e6ac9e08",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.pantalla",
+      "targets": [
+        ["css=.pantalla", "css:finder"],
+        ["xpath=//div", "xpath:position"],
+        ["xpath=//div[contains(.,'1')]", "xpath:innerText"]
+      ],
+      "value": "1"
+    }, {
+      "id": "469f469a-b2cc-4977-a11a-1724ee890b58",
+      "comment": "",
+      "command": "click",
+      "target": "css=.grid-container:nth-child(7) > .numerico",
+      "targets": [
+        ["css=.grid-container:nth-child(7) > .numerico", "css:finder"],
+        ["xpath=//teclado[5]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'0')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b660d23b-204a-47a2-861f-15ca427b3975",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.pantalla",
+      "targets": [
+        ["css=.pantalla", "css:finder"],
+        ["xpath=//div", "xpath:position"],
+        ["xpath=//div[contains(.,'10')]", "xpath:innerText"]
+      ],
+      "value": "10"
+    }, {
+      "id": "da1fe6a8-5fdf-40cf-a20e-0367f1bc6b20",
+      "comment": "",
+      "command": "click",
+      "target": "css=.signo",
+      "targets": [
+        ["css=.signo", "css:finder"],
+        ["xpath=//button[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2c95cdb7-7a6d-46d5-a477-59c7497ffe11",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.pantalla",
+      "targets": [
+        ["css=.pantalla", "css:finder"],
+        ["xpath=//div", "xpath:position"],
+        ["xpath=//div[contains(.,'-10')]", "xpath:innerText"]
+      ],
+      "value": "-10"
+    }, {
+      "id": "f3b50951-ecaa-44f5-9d31-852c7ed81486",
+      "comment": "",
+      "command": "click",
+      "target": "css=.operador:nth-child(3)",
+      "targets": [
+        ["css=.operador:nth-child(3)", "css:finder"],
+        ["xpath=//button[3]", "xpath:position"],
+        ["xpath=//button[contains(.,'/')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d1bd052c-631e-4a45-9913-8aa3e7968586",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.historial",
+      "targets": [
+        ["css=.historial", "css:finder"],
+        ["xpath=//output", "xpath:position"],
+        ["xpath=//output[contains(.,'4 /')]", "xpath:innerText"]
+      ],
+      "value": "4 /"
+    }, {
+      "id": "dba63f60-55fa-4f83-b8ea-22530d3fcd57",
+      "comment": "",
+      "command": "click",
+      "target": "css=.grid-container:nth-child(6) > .numerico:nth-child(2)",
+      "targets": [
+        ["css=.grid-container:nth-child(6) > .numerico:nth-child(2)", "css:finder"],
+        ["xpath=//teclado[4]/button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'2')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "297962b9-beb6-4e02-b8e5-d2c9c598642b",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.pantalla",
+      "targets": [
+        ["css=.pantalla", "css:finder"],
+        ["xpath=//div", "xpath:position"],
+        ["xpath=//div[contains(.,'2')]", "xpath:innerText"]
+      ],
+      "value": "2"
+    }, {
+      "id": "9c925caf-9c37-4014-84b9-0501862bfda8",
+      "comment": "",
+      "command": "click",
+      "target": "css=.igual",
+      "targets": [
+        ["css=.igual", "css:finder"],
+        ["xpath=//teclado[5]/button[4]", "xpath:position"],
+        ["xpath=//button[contains(.,'=')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ef1ad4ad-418d-450c-8742-762b82687dea",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.historial",
+      "targets": [
+        ["css=.historial", "css:finder"],
+        ["xpath=//output", "xpath:position"],
+        ["xpath=//output[contains(.,'4 / 2 =')]", "xpath:innerText"]
+      ],
+      "value": "4 / 2 ="
+    }, {
+      "id": "22e415c1-717c-417b-81f8-15b5b439890c",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.pantalla",
+      "targets": [
+        ["css=.pantalla", "css:finder"],
+        ["xpath=//div", "xpath:position"],
+        ["xpath=//div[contains(.,'2')]", "xpath:innerText"]
+      ],
+      "value": "2"
+    }]
+  }, {
+    "id": "e95908bf-1966-4ab1-a22f-45d8808135a0",
+    "name": "Decimales",
+    "commands": [{
+      "id": "d792632c-0bfe-46cf-924e-da473d1bd9d2",
+      "comment": "",
+      "command": "open",
+      "target": "http://127.0.0.1:5500/Calculadora/calculadora.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e0177635-7f57-4a95-96a6-a886f024f457",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "978x680",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "eec9f53c-fdfa-4ab8-9bff-65865cf2f94b",
+      "comment": "",
+      "command": "click",
+      "target": "css=.grid-container:nth-child(6) > .numerico:nth-child(3)",
+      "targets": [
+        ["css=.grid-container:nth-child(6) > .numerico:nth-child(3)", "css:finder"],
+        ["xpath=//teclado[4]/button[3]", "xpath:position"],
+        ["xpath=//button[contains(.,'3')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c09617f1-eb9e-4f79-8d6f-0bffe1340a20",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.pantalla",
+      "targets": [
+        ["css=.pantalla", "css:finder"],
+        ["xpath=//div", "xpath:position"],
+        ["xpath=//div[contains(.,'3')]", "xpath:innerText"]
+      ],
+      "value": "3"
+    }, {
+      "id": "9972da28-9456-44c8-abed-2cf0f99569fe",
+      "comment": "",
+      "command": "click",
+      "target": "css=.decimal",
+      "targets": [
+        ["css=.decimal", "css:finder"],
+        ["xpath=//teclado[5]/button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,',')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "abefa26a-e9f1-4713-9248-07e1d6db20e2",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.pantalla",
+      "targets": [
+        ["css=.pantalla", "css:finder"],
+        ["xpath=//div", "xpath:position"],
+        ["xpath=//div[contains(.,'3.')]", "xpath:innerText"]
+      ],
+      "value": "3."
+    }, {
+      "id": "7cb9f0a4-821a-41a1-92b9-7f43d2652841",
+      "comment": "",
+      "command": "click",
+      "target": "css=.grid-container:nth-child(5) > .numerico:nth-child(2)",
+      "targets": [
+        ["css=.grid-container:nth-child(5) > .numerico:nth-child(2)", "css:finder"],
+        ["xpath=//teclado[3]/button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'5')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "2c633a8d-6c97-4c93-bb3b-884813c125b2",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.pantalla",
+      "targets": [
+        ["css=.pantalla", "css:finder"],
+        ["xpath=//div", "xpath:position"],
+        ["xpath=//div[contains(.,'3.5')]", "xpath:innerText"]
+      ],
+      "value": "3.5"
+    }, {
+      "id": "69f81d5c-48c3-47be-b1e0-2770cf8e011d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.grid-container:nth-child(6) > .operador",
+      "targets": [
+        ["css=.grid-container:nth-child(6) > .operador", "css:finder"],
+        ["xpath=//teclado[4]/button[4]", "xpath:position"],
+        ["xpath=//button[contains(.,'+')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "71be9e2d-8663-4f68-871d-841497abcacc",
+      "comment": "",
+      "command": "click",
+      "target": "css=.grid-container:nth-child(6) > .numerico:nth-child(1)",
+      "targets": [
+        ["css=.grid-container:nth-child(6) > .numerico:nth-child(1)", "css:finder"],
+        ["xpath=//teclado[4]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'1')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "928c2277-5d75-4432-8162-1d2369d7a896",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.pantalla",
+      "targets": [
+        ["css=.pantalla", "css:finder"],
+        ["xpath=//div", "xpath:position"],
+        ["xpath=//div[contains(.,'1')]", "xpath:innerText"]
+      ],
+      "value": "1"
+    }, {
+      "id": "0aeff5f1-31a7-42ef-b2fd-265e2922110f",
+      "comment": "",
+      "command": "click",
+      "target": "css=.decimal",
+      "targets": [
+        ["css=.decimal", "css:finder"],
+        ["xpath=//teclado[5]/button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,',')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "52058261-0336-4bf2-a0c8-e4c310e8937d",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.pantalla",
+      "targets": [
+        ["css=.pantalla", "css:finder"],
+        ["xpath=//div", "xpath:position"],
+        ["xpath=//div[contains(.,'1.')]", "xpath:innerText"]
+      ],
+      "value": "1."
+    }, {
+      "id": "ed6e6473-9260-475d-85e1-b4e9a936ad4e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.grid-container:nth-child(6) > .numerico:nth-child(2)",
+      "targets": [
+        ["css=.grid-container:nth-child(6) > .numerico:nth-child(2)", "css:finder"],
+        ["xpath=//teclado[4]/button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'2')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5c2eacac-01ae-42c6-8ee2-5fce6a754c4e",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.pantalla",
+      "targets": [
+        ["css=.pantalla", "css:finder"],
+        ["xpath=//div", "xpath:position"],
+        ["xpath=//div[contains(.,'1.2')]", "xpath:innerText"]
+      ],
+      "value": "1.2"
+    }, {
+      "id": "da626471-0994-4251-877f-65752448a359",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.historial",
+      "targets": [
+        ["css=.historial", "css:finder"],
+        ["xpath=//output", "xpath:position"],
+        ["xpath=//output[contains(.,'3.5 +')]", "xpath:innerText"]
+      ],
+      "value": "3.5 +"
+    }, {
+      "id": "9fa0dacb-0372-48be-8610-73b426417ac1",
+      "comment": "",
+      "command": "click",
+      "target": "css=.igual",
+      "targets": [
+        ["css=.igual", "css:finder"],
+        ["xpath=//teclado[5]/button[4]", "xpath:position"],
+        ["xpath=//button[contains(.,'=')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c5ea1b89-dd69-4813-ad83-67f71d66e6c9",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.historial",
+      "targets": [
+        ["css=.historial", "css:finder"],
+        ["xpath=//output", "xpath:position"],
+        ["xpath=//output[contains(.,'3.5 + 1.2 =')]", "xpath:innerText"]
+      ],
+      "value": "3.5 + 1.2 ="
+    }, {
+      "id": "b0058f85-10e8-4845-8a0c-8bf6c4a9544f",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.pantalla",
+      "targets": [
+        ["css=.pantalla", "css:finder"],
+        ["xpath=//div", "xpath:position"],
+        ["xpath=//div[contains(.,'4.7')]", "xpath:innerText"]
+      ],
+      "value": "4.7"
+    }]
+  }, {
+    "id": "cd74844d-4757-409d-b726-87548c63c3f3",
+    "name": "Borrar un dígito",
+    "commands": [{
+      "id": "82663d0b-5b20-496d-8a6f-5a701323d3b1",
+      "comment": "",
+      "command": "open",
+      "target": "http://127.0.0.1:5500/Calculadora/calculadora.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "04aac8c1-4cd5-404c-9d0d-e98fa8dacc5b",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "978x680",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "bb51040a-820d-4bab-b8d6-383c3fab33e1",
+      "comment": "",
+      "command": "click",
+      "target": "css=.grid-container:nth-child(6) > .numerico:nth-child(3)",
+      "targets": [
+        ["css=.grid-container:nth-child(6) > .numerico:nth-child(3)", "css:finder"],
+        ["xpath=//teclado[4]/button[3]", "xpath:position"],
+        ["xpath=//button[contains(.,'3')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ee65d3bc-5f08-4f24-88ad-4815eb1a3579",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.pantalla",
+      "targets": [
+        ["css=.pantalla", "css:finder"],
+        ["xpath=//div", "xpath:position"],
+        ["xpath=//div[contains(.,'3')]", "xpath:innerText"]
+      ],
+      "value": "3"
+    }, {
+      "id": "10a59a8b-98a3-4479-b7cc-2414b6efadb0",
+      "comment": "",
+      "command": "click",
+      "target": "css=.grid-container:nth-child(5) > .numerico:nth-child(3)",
+      "targets": [
+        ["css=.grid-container:nth-child(5) > .numerico:nth-child(3)", "css:finder"],
+        ["xpath=//teclado[3]/button[3]", "xpath:position"],
+        ["xpath=//button[contains(.,'6')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "06b9348e-e2b0-46ab-8601-4aa8a165390c",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.pantalla",
+      "targets": [
+        ["css=.pantalla", "css:finder"],
+        ["xpath=//div", "xpath:position"],
+        ["xpath=//div[contains(.,'36')]", "xpath:innerText"]
+      ],
+      "value": "36"
+    }, {
+      "id": "d16686ba-0089-49a6-a04b-e2b66397070e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.grid-container:nth-child(4) > .numerico:nth-child(3)",
+      "targets": [
+        ["css=.grid-container:nth-child(4) > .numerico:nth-child(3)", "css:finder"],
+        ["xpath=//teclado[2]/button[3]", "xpath:position"],
+        ["xpath=//button[contains(.,'9')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "4bb750e5-d770-4cd8-b2d7-6c1b505bc6f4",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.pantalla",
+      "targets": [
+        ["css=.pantalla", "css:finder"],
+        ["xpath=//div", "xpath:position"],
+        ["xpath=//div[contains(.,'369')]", "xpath:innerText"]
+      ],
+      "value": "369"
+    }, {
+      "id": "c2d8d668-e617-46ed-a687-216b52870987",
+      "comment": "",
+      "command": "click",
+      "target": "css=.bi-backspace",
+      "targets": [
+        ["css=.bi-backspace", "css:finder"],
+        ["xpath=//button[3]/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c978cbcd-944e-4e15-be76-cb6ee403bb2e",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.pantalla",
+      "targets": [
+        ["css=.pantalla", "css:finder"],
+        ["xpath=//div", "xpath:position"],
+        ["xpath=//div[contains(.,'36')]", "xpath:innerText"]
+      ],
+      "value": "36"
+    }, {
+      "id": "f59200e6-ca37-4c45-86ed-cf2438078292",
+      "comment": "",
+      "command": "click",
+      "target": "css=.bi-backspace",
+      "targets": [
+        ["css=.bi-backspace", "css:finder"],
+        ["xpath=//button[3]/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f550ea65-7208-4322-a438-1009d494867a",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.pantalla",
+      "targets": [
+        ["css=.pantalla", "css:finder"],
+        ["xpath=//div", "xpath:position"],
+        ["xpath=//div[contains(.,'3')]", "xpath:innerText"]
+      ],
+      "value": "3"
+    }, {
+      "id": "4ff48407-ada2-49ea-ac77-2a8b7d6e0c99",
+      "comment": "",
+      "command": "click",
+      "target": "css=.retroceder",
+      "targets": [
+        ["css=.retroceder", "css:finder"],
+        ["xpath=//teclado[5]/button[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6d5cc973-43b0-4788-ae85-84d233647501",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.pantalla",
+      "targets": [
+        ["css=.pantalla", "css:finder"],
+        ["xpath=//div", "xpath:position"],
+        ["xpath=//div[contains(.,'0')]", "xpath:innerText"]
+      ],
+      "value": "0"
+    }]
+  }, {
+    "id": "187ceb14-d1da-458a-a1de-58d7836ebb8c",
+    "name": "Reiniciar calculadora",
+    "commands": [{
+      "id": "c88f8af4-84eb-4794-bc03-b89ea54d3fbf",
+      "comment": "",
+      "command": "open",
+      "target": "http://127.0.0.1:5500/Calculadora/calculadora.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "68fcacbd-8937-4b89-8613-e23c3eabde06",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "978x680",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2c92292d-083a-4f09-b0c8-af139f9ed8b3",
+      "comment": "",
+      "command": "click",
+      "target": "css=.grid-container:nth-child(6) > .numerico:nth-child(3)",
+      "targets": [
+        ["css=.grid-container:nth-child(6) > .numerico:nth-child(3)", "css:finder"],
+        ["xpath=//teclado[4]/button[3]", "xpath:position"],
+        ["xpath=//button[contains(.,'3')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "18ed0355-3042-4a68-a267-d4b92c8239dc",
+      "comment": "",
+      "command": "click",
+      "target": "css=.grid-container:nth-child(4) > .numerico:nth-child(3)",
+      "targets": [
+        ["css=.grid-container:nth-child(4) > .numerico:nth-child(3)", "css:finder"],
+        ["xpath=//teclado[2]/button[3]", "xpath:position"],
+        ["xpath=//button[contains(.,'9')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c176ae95-7019-49b5-8140-c2420ccbfcfc",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.pantalla",
+      "targets": [
+        ["css=.pantalla", "css:finder"],
+        ["xpath=//div", "xpath:position"],
+        ["xpath=//div[contains(.,'39')]", "xpath:innerText"]
+      ],
+      "value": "39"
+    }, {
+      "id": "a0703f61-d0a0-47f5-83c4-6f476bac079a",
+      "comment": "",
+      "command": "click",
+      "target": "css=.grid-container:nth-child(6) > .operador",
+      "targets": [
+        ["css=.grid-container:nth-child(6) > .operador", "css:finder"],
+        ["xpath=//teclado[4]/button[4]", "xpath:position"],
+        ["xpath=//button[contains(.,'+')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0078594f-8dda-4479-bd77-bccf109705a5",
+      "comment": "",
+      "command": "click",
+      "target": "css=.grid-container:nth-child(6) > .numerico:nth-child(1)",
+      "targets": [
+        ["css=.grid-container:nth-child(6) > .numerico:nth-child(1)", "css:finder"],
+        ["xpath=//teclado[4]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'1')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e402cc1c-bc7e-47ed-9d2d-1b3795bcf8bb",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.historial",
+      "targets": [
+        ["css=.historial", "css:finder"],
+        ["xpath=//output", "xpath:position"],
+        ["xpath=//output[contains(.,'39 +')]", "xpath:innerText"]
+      ],
+      "value": "39 +"
+    }, {
+      "id": "17f4f600-ef2e-4285-b054-b8b156059aa4",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.pantalla",
+      "targets": [
+        ["css=.pantalla", "css:finder"],
+        ["xpath=//div", "xpath:position"],
+        ["xpath=//div[contains(.,'1')]", "xpath:innerText"]
+      ],
+      "value": "1"
+    }, {
+      "id": "a1b31df8-f283-4d66-8629-12da2347d575",
+      "comment": "",
+      "command": "click",
+      "target": "css=.reiniciar",
+      "targets": [
+        ["css=.reiniciar", "css:finder"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'C')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3e8b188e-3e85-4b16-86ad-f4d88de9c3f0",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.pantalla",
+      "targets": [
+        ["css=.pantalla", "css:finder"],
+        ["xpath=//div", "xpath:position"],
+        ["xpath=//div[contains(.,'0')]", "xpath:innerText"]
+      ],
+      "value": "0"
+    }]
+  }],
+  "suites": [{
+    "id": "c6230aa9-30a7-4789-8d83-5bace1a70e76",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["4c3fead3-fd30-4095-bf40-a5acfc79d08d"]
+  }],
+  "urls": ["http://127.0.0.1:5500/", "http://127.0.0.1:5500/Calculadora/calculadora.html"],
+  "plugins": []
+}
