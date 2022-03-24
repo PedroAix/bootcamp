@@ -1,0 +1,39 @@
+<body>
+  <main>
+    <h3>
+      <output>{{historial}}</output>
+    </h3>
+    <h1>
+      <output>{{pantalla}}</output>
+    </h1>
+    <div class="grid-container">
+      <button class="reiniciar" (click) = "reiniciarCalculadora()">C</button>
+      <button class="signo" (click) = "cambiarSigno()"><i class="bi bi-plus-slash-minus"></i></button>
+      <button class="operador" (click) = "pulsarOperador(pantalla,'/')">/</button>
+    </div>
+    <div class="grid-container">
+      <button class="numerico" (click) = "ponDigito(7)" >7</button>
+      <button class="numerico" (click) = "ponDigito(8)" >8</button>
+      <button class="numerico" (click) = "ponDigito(9)" >9</button>
+      <button class="operador" (click) = "pulsarOperador(pantalla,'x')">x</button>
+    </div>
+    <div class="grid-container">
+      <button class="numerico" (click) = "ponDigito(4)" >4</button>
+      <button class="numerico" (click) = "ponDigito(5)" >5</button>
+      <button class="numerico" (click) = "ponDigito(6)" >6</button>
+      <button class="operador" (click) = "pulsarOperador(pantalla,'-')">-</button>
+    </div>
+    <div class="grid-container">
+      <button class="numerico" (click) = "ponDigito(1)" >1</button>
+      <button class="numerico" (click) = "ponDigito(2)" >2</button>
+      <button class="numerico" (click) = "ponDigito(3)" >3</button>
+      <button class="operador" (click) = "pulsarOperador(pantalla,'+')">+</button>
+    </div>
+    <div class="grid-container">
+      <button class="numerico">0</button>
+      <button class="decimal" (click) = "ponerDecimal()">,</button>
+      <button class="retroceder" (click) = "borrarDigito()"><i class="bi bi-backspace"></i></button>
+      <button class="igual" (click) = "pulsarIgual(pantalla)">=</button>
+    </div>
+  </main>
+</body>
