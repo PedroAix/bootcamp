@@ -30,7 +30,7 @@
       <button class="operador" (click) = "pulsarOperador(pantalla,'+')">+</button>
     </div>
     <div class="grid-container">
-      <button class="numerico">0</button>
+      <button class="numerico" (click) = "ponDigito(0)">0</button>
       <button class="decimal" (click) = "ponerDecimal()">,</button>
       <button class="retroceder" (click) = "borrarDigito()"><i class="bi bi-backspace"></i></button>
       <button class="igual" (click) = "pulsarIgual(pantalla)">=</button>
