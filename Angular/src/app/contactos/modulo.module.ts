@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { MyCoreModule } from 'src/lib/my-core';
 import { CONTACTOS_COMPONENTES } from './componente.component';
+import { CommonComponentModule } from '../common-component';
 
 
 
@@ -14,7 +15,7 @@ import { CONTACTOS_COMPONENTES } from './componente.component';
   ],
   imports: [
     CommonModule, FormsModule, RouterModule.forChild([]),
-    MyCoreModule, CommonServicesModule,
+    MyCoreModule, CommonServicesModule, CommonComponentModule,
   ],
   exports: [CONTACTOS_COMPONENTES,],
 })
