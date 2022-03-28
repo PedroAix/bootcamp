@@ -14,6 +14,7 @@ import { DinamicoComponent } from './dinamico/dinamico.component';
 import { CalculadoraComponent } from './calculadora/calculadora.component';
 import { FormularioComponent } from './formulario/formulario.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ContactosModule } from './contactos';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule, FormsModule, HttpClientModule,
     AppRoutingModule, MainModule, SecurityModule, MyCoreModule, CommonServicesModule,
+    ContactosModule,
   ],
   providers: [
     LoggerService,
