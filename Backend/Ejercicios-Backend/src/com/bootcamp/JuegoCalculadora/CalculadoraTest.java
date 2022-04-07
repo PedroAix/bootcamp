@@ -1,4 +1,4 @@
-package com.capgemini.JuegoCalculadora;
+package com.bootcamp.JuegoCalculadora;
 
 import static org.junit.jupiter.api.Assertions.*;
 

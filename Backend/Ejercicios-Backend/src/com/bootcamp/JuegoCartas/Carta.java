@@ -1,4 +1,4 @@
-package com.capgemini.JuegoCartas;
+package com.bootcamp.JuegoCartas;
 
 public class Carta {
 	private final valoresCarta valor;

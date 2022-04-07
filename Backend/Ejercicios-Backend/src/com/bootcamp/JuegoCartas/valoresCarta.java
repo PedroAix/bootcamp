@@ -1,4 +1,4 @@
-package com.capgemini.JuegoCartas;
+package com.bootcamp.JuegoCartas;
 
 public enum valoresCarta {
 

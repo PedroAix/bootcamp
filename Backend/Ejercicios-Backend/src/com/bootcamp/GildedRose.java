@@ -1,4 +1,4 @@
-package com.capgemini;
+package com.bootcamp;
 
 class GildedRose {
     Item[] items;

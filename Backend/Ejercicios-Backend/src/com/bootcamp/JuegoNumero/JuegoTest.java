@@ -1,4 +1,4 @@
-package com.capgemini.JuegoNumero;
+package com.bootcamp.JuegoNumero;
 
 import static org.junit.jupiter.api.Assertions.*;
 

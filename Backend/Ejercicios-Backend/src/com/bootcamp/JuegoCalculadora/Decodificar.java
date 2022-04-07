@@ -1,4 +1,4 @@
-package com.capgemini.JuegoCalculadora;
+package com.bootcamp.JuegoCalculadora;
 
 import java.io.File;
 import java.io.FileNotFoundException;
