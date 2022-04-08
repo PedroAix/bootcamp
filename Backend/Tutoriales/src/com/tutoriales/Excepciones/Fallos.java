@@ -25,9 +25,12 @@ public class Fallos {
 	//Tanto RuntimeException como IOException heredan de la misma clase: Exception
 	//Utilizando Exception en try catch o en el throws abarcamos ambos tipos de errores
 	//de una forma más general
+	
+	//De forma manual podemos lanzar errores usando throw e instanciando la clase de la excepcion que queramos
+	//Si lo lanzamos así lo ideal sería indicar en el método que lanza un error, mediante el throws
 
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws FalloException{
 		int[] matriz = new int[5];
 		
 		matriz[0] = 5;
@@ -39,7 +42,9 @@ public class Fallos {
 		try {
 			matriz[5] = 1;
 		} catch (Exception e) {
-			System.out.println("Se ha genereado un error");
+			e.printStackTrace();
+
+			throw new FalloException("Ha habido un error");
 		}
 		 
 		
@@ -54,6 +59,4 @@ public class Fallos {
 		JOptionPane.showMessageDialog(null, "Hola, " + nombre + "\nTienes " + edad + " años");
 		System.out.println("Ejecución terminada");
 	}
-
-	
 }
